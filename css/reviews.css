@@ -1,0 +1,196 @@
+/* Reviews Page Styles */
+.reviews-section {
+  padding: 4rem 0;
+  background-color: var(--white);
+}
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+@media (min-width: 768px) {
+  .reviews-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .reviews-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.review-card {
+  background-color: var(--background);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+  transform: translateY(0);
+}
+
+.review-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.review-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.reviewer-name {
+  font-size: 1.125rem;
+  margin-bottom: 0.25rem;
+  color: var(--text-dark);
+}
+
+.review-date {
+  font-size: 0.875rem;
+  color: #777;
+  margin-bottom: 0;
+}
+
+/* Fixed star sizing */
+.review-rating .stars {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 2px;
+  align-items: center;
+}
+
+.review-rating .star-icon {
+  width: 16px;
+  height: 16px;
+  fill: var(--primary);
+  color: var(--primary);
+  flex-shrink: 0;
+  display: inline-block;
+  margin-right: 2px;
+}
+
+.review-text {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--text-dark);
+  margin-bottom: 0;
+}
+
+/* Write Review Section */
+.write-review-section {
+  background-color: var(--background);
+  border-radius: var(--radius);
+  padding: 2rem;
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.write-review-section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.1);
+}
+
+.review-form {
+  margin-top: 2rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--text-dark);
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.form-group input:focus + label,
+.form-group textarea:focus + label {
+  color: var(--primary);
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  transition: all 0.3s ease;
+  background-color: var(--white);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px rgba(157, 106, 135, 0.2);
+}
+
+.rating-select {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.rating-btn {
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.rating-btn .star-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  fill: #ccc;
+  transition: fill 0.3s ease, transform 0.2s ease;
+}
+
+.rating-btn:hover .star-icon {
+  fill: var(--primary);
+  transform: scale(1.1);
+}
+
+.rating-btn.active .star-icon {
+  fill: var(--primary);
+}
+
+/* Enhanced animations */
+.review-card {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease, box-shadow 0.3s ease;
+}
+
+.review-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.review-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Star rating hover effect */
+.rating-select {
+  position: relative;
+}
+
+.rating-btn:hover ~ .rating-btn .star-icon {
+  fill: #ccc;
+}
+
+.rating-select:hover .rating-btn .star-icon {
+  fill: var(--primary);
+}
+
+.rating-btn:hover ~ .rating-btn .star-icon {
+  fill: #ccc;
+}

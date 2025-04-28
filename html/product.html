@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PrinkWellness - Product</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="index.html">
+                    <img src="./public/images/prink-logo.png" alt="PrinkWellness" class="logo-img">
+                </a>
+            </div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="product.html">Products</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="product-page">
+        <section class="product-details">
+            <div class="product-image">
+                <img id="productImage" src="" alt="Product Image" class="product-img">
+            </div>
+            <div class="product-info">
+                <h1 id="productName"></h1>
+                <p id="productDescription" class="product-description"></p>
+                <p id="productPrice" class="product-price"></p>
+    
+                <div id="stockInfo" class="stock-info"></div>
+    
+                <div class="quantity-selector">
+                    <button id="decreaseQuantity">-</button>
+                    <span id="quantityValue">1</span>
+                    <button id="increaseQuantity">+</button>
+                </div>
+    
+                <div class="product-actions">
+                    <button id="addToCartBtn" class="add-to-cart">Add to Cart</button>
+                    <button id="buyNowBtn" class="buy-now">Buy Now</button>
+                    <div id="addedToCartMessage" class="added-to-cart-message">Added to cart!</div>
+                </div>
+    
+                <div class="product-tabs">
+                    <button class="tab-button active" data-tab="detailsTab">Product Details</button>
+                    <button class="tab-button" data-tab="instructionsTab">Instructions</button>
+                </div>
+    
+                <div id="detailsTab" class="tab-content active">
+                    <ul id="productDetails"></ul>
+                </div>
+                <div id="instructionsTab" class="tab-content">
+                    <p id="productInstructions"></p>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; 2024 PrinkWellness. All rights reserved.</p>
+    </footer>
+</body>
+</html>

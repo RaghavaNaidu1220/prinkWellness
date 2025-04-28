@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - PrinkWellness</title>
+  <meta name="description" content="Get in touch with PrinkWellness for questions, feedback, or support">
+  <link rel="stylesheet" href="./css/styles.css">
+  <link rel="stylesheet" href="./css/animations.css">
+  <link rel="stylesheet" href="./css/cart.css">
+  <link rel="stylesheet" href="./css/contact.css">
+  <link rel="stylesheet" href="./css/home.css">
+  <link rel="stylesheet" href="./css/product.css">
+  <link rel="stylesheet" href="./css/reviews.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="fixed-header">
+    <div class="container">
+      <a href="./index.html" class="logo">
+        <img src="./public/images/prink-logo.png" alt="PrinkWellness" class="logo-img">
+        <span class="logo-text">PrinkWellness</span>
+      </a>
+
+      <nav class="desktop-nav">
+        <a href="./index.html" class="nav-link">Home</a>
+        <a href="./about.html" class="nav-link">About Us</a>
+        <a href="./shop.html" class="nav-link">Shop</a>
+        <a href="./reviews.html" class="nav-link">Reviews</a>
+        <a href="./contact.html" class="nav-link active">Contact</a>
+        <a href="./how-to-use.html" class="nav-link">How To Use</a>
+        <button class="cart-button" id="cartBtn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="cart-icon">
+            <circle cx="9" cy="21" r="1"></circle>
+            <circle cx="20" cy="21" r="1"></circle>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+          </svg>
+          <span class="cart-count" id="cartCount">0</span>
+        </button>
+      </nav>
+
+      <div class="mobile-nav-container">
+        <button class="cart-button" id="mobileCartBtn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="cart-icon">
+            <circle cx="9" cy="21" r="1"></circle>
+            <circle cx="20" cy="21" r="1"></circle>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+          </svg>
+          <span class="cart-count" id="mobileCartCount">0</span>
+        </button>
+        <button class="menu-button" id="menuBtn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="menu-icon">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu-header">
+      <button class="close-menu" id="closeMenu">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+    <nav class="mobile-menu-nav">
+      <a href="./index.html" class="mobile-nav-link">Home</a>
+      <a href="./about.html" class="mobile-nav-link">About Us</a>
+      <a href="./shop.html" class="mobile-nav-link">Shop</a>
+      <a href="./reviews.html" class="mobile-nav-link">Reviews</a>
+      <a href="./contact.html" class="mobile-nav-link active">Contact</a>
+      <a href="./how-to-use.html" class="mobile-nav-link">How To Use</a>
+    </nav>
+  </div>
+
+  <main class="main-content">
+    <section class="page-hero">
+      <div class="container">
+        <div class="page-hero-content animate-fade-in">
+          <h1 class="page-title">Contact Us</h1>
+          <p class="page-description">
+            Have questions or feedback? We'd love to hear from you.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-section">
+      <div class="container">
+        <div class="contact-grid">
+          <div class="contact-info animate-slide-in-left">
+            <h2 class="section-title">Get in Touch</h2>
+            <p class="section-description">
+              We're here to help with any questions you might have about our products, ordering, or menstrual wellness in general.
+            </p>
+
+            <div class="contact-methods">
+              <div class="contact-method">
+                <div class="contact-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
+                  </svg>
+                </div>
+                <div class="contact-details">
+                  <h3 class="contact-title">Email Us</h3>
+                  <p class="contact-value">info@prinkwellness.com</p>
+                  <p class="contact-description">We'll respond within 24 hours</p>
+                </div>
+              </div>
+
+              <div class="contact-method">
+                <div class="contact-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M15.05 5A5 5 0 0 1 19 8.95M15.05 1A9 9 0 0 1 23 8.94m-1 7.98v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                  </svg>
+                </div>
+                <div class="contact-details">
+                  <h3 class="contact-title">Call Us</h3>
+                  <p class="contact-value">+91 98765 43210</p>
+                  <p class="contact-description">Monday-Friday, 9am-5pm IST</p>
+                </div>
+              </div>
+
+              <div class="contact-method">
+                <div class="contact-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="9" cy="7" r="4"></circle>
+                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                  </svg>
+                </div>
+                <div class="contact-details">
+                  <h3 class="contact-title">Follow Us</h3>
+                  <div class="social-links">
+                    <a href="#" class="social-link">Instagram</a>
+                    <a href="#" class="social-link">Twitter</a>
+                    <a href="#" class="social-link">Facebook</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-form-container animate-slide-in-right">
+            <div class="form-card">
+              <h2 class="form-title">Send Us a Message</h2>
+              <form id="contactForm" class="contact-form">
+                <div class="form-group">
+                  <label for="name">Your Name</label>
+                  <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                  <label for="email">Email Address</label>
+                  <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                  <label for="subject">Subject</label>
+                  <input type="text" id="subject" name="subject" required>
+                </div>
+                <div class="form-group">
+                  <label for="message">Your Message</label>
+                  <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="primary-button">Send Message</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq-section">
+      <div class="container">
+        <div class="section-header animate-on-scroll">
+          <h2 class="section-title">Frequently Asked Questions</h2>
+          <p class="section-description">
+            Find answers to our most commonly asked questions.
+          </p>
+        </div>
+
+        <div class="faq-grid">
+          <div class="faq-item animate-on-scroll" data-delay="0">
+            <div class="faq-question">
+              <h3>How do I use PrinkWellness suppositories?</h3>
+              <button class="faq-toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="plus-icon">
+                  <line x1="12" y1="5" x2="12" y2="19"></line>
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="minus-icon">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                </svg>
+              </button>
+            </div>
+            <div class="faq-answer">
+              <p>
+                Our suppositories are designed for easy insertion. Each product comes with detailed instructions. For best results, refrigerate before use to ensure the suppository is firm. Wash your hands, lie down, and gently insert the suppository as far as is comfortable. The suppository will melt at body temperature, releasing the active ingredients.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item animate-on-scroll" data-delay="200">
+            <div class="faq-question">
+              <h3>Are PrinkWellness products safe?</h3>
+              <button class="faq-toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="plus-icon">
+                  <line x1="12" y1="5" x2="12" y2="19"></line>
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="minus-icon">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                </svg>
+              </button>
+            </div>
+            <div class="faq-answer">
+              <p>
+                Yes, our products are made with 100% natural ingredients and have been clinically validated for safety and efficacy. All our products undergo rigorous testing and are manufactured in facilities that follow strict quality control standards.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item animate-on-scroll" data-delay="400">
+            <div class="faq-question">
+              <h3>How quickly will I feel relief?</h3>
+              <button class="faq-toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="plus-icon">
+                  <line x1="12" y1="5" x2="12" y2="19"></line>
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="minus-icon">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                </svg>
+              </button>
+            </div>
+            <div class="faq-answer">
+              <p>
+                Most women report feeling the cooling sensation within 15-20 minutes of insertion, with pain relief following shortly after. The effects typically last for 4-6 hours, though individual experiences may vary.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item animate-on-scroll" data-delay="600">
+            <div class="faq-question">
+              <h3>Can I use PrinkWellness products with tampons or menstrual cups?</h3>
+              <button class="faq-toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="plus-icon">
+                  <line x1="12" y1="5" x2="12" y2="19"></line>
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="minus-icon">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                </svg>
+              </button>
+            </div>
+            <div class="faq-answer">
+              <p>
+                We recommend inserting the suppository first and waiting 15-20 minutes before inserting a tampon or menstrual cup. This allows the active ingredients to be absorbed properly before introducing any other products.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item animate-on-scroll" data-delay="800">
+            <div class="faq-question">
+              <h3>How should I store my PrinkWellness products?</h3>
+              <button class="faq-toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="plus-icon">
+                  <line x1="12" y1="5" x2="12" y2="19"></line>
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="minus-icon">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                </svg>
+              </button>
+            </div>
+            <div class="faq-answer">
+              <p>
+                Store in a cool, dry place away from direct sunlight. For best results, refrigerate the suppositories before use to ensure they are firm for easier insertion. Do not freeze the products.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item animate-on-scroll" data-delay="1000">
+            <div class="faq-question">
+              <h3>Do you ship internationally?</h3>
+              <button class="faq-toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="plus-icon">
+                  <line x1="12" y1="5" x2="12" y2="19"></line>
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="minus-icon">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                </svg>
+              </button>
+            </div>
+            <div class="faq-answer">
+              <p>
+                Currently, we ship throughout India. We are working on expanding our shipping capabilities to other countries and will update our website when international shipping becomes available.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <img src="./public/images/prink-logo.png" alt="PrinkWellness" class="footer-logo">
+          <p class="footer-tagline">Relief, Redefined.</p>
+          <p class="footer-description">
+            India's First Clinically Validated Vaginal Suppository for Menstrual Cramps
+          </p>
+        </div>
+        <div class="footer-links">
+          <h3 class="footer-heading">Quick Links</h3>
+          <ul class="footer-nav">
+            <li><a href="./index.html" class="footer-link">Home</a></li>
+            <li><a href="./about.html" class="footer-link">About Us</a></li>
+            <li><a href="./shop.html" class="footer-link">Shop</a></li>
+            <li><a href="./science.html" class="footer-link">Science</a></li>
+            <li><a href="./how-to-use.html" class="footer-link">How It Works</a></li>
+            <li><a href="./contact.html" class="footer-link">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h3 class="footer-heading">Contact Us</h3>
+          <p class="footer-contact-info">Email: info@prinkwellness.com</p>
+          <p class="footer-contact-info">Follow us on social media</p>
+          <div class="social-icons">
+            <a href="#" class="social-icon">
+              <span class="sr-only">Instagram</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+              </svg>
+            </a>
+            <a href="#" class="social-icon">
+              <span class="sr-only">Twitter</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
+              </svg>
+            </a>
+            <a href="#" class="social-icon">
+              <span class="sr-only">Facebook</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="copyright">
+          &copy; <span id="currentYear"></span> PrinkWellness. All rights reserved.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./js/main.js"></script>
+  <script src="./js/contact.js"></script>
+</body>
+</html>
