@@ -1,6 +1,14 @@
 document.addEventListener("DOMContentLoaded", () => {
   console.log("Checkout page loaded")
 
+  // Initialize EmailJS
+  if (typeof emailjs !== "undefined") {
+    emailjs.init("wnc0CaYrKlWKSS39G")
+    console.log("EmailJS initialized")
+  } else {
+    console.error("EmailJS is not loaded. Ensure the EmailJS script is included in your HTML.")
+  }
+
   // Set current year in footer
   const currentYearElement = document.getElementById("currentYear")
   if (currentYearElement) {
@@ -386,6 +394,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const steps = document.querySelectorAll(".checkout-form")
   const stepIndicators = document.querySelectorAll(".progress-step")
 
+  console.log("Found steps:", steps.length)
+  console.log("Found step indicators:", stepIndicators.length)
+
   // Next step buttons
   document.querySelectorAll(".next-step").forEach((button) => {
     button.addEventListener("click", function () {
@@ -425,12 +436,14 @@ document.addEventListener("DOMContentLoaded", () => {
       // Update step indicators
       stepIndicators.forEach((indicator) => {
         indicator.classList.remove("active")
-        if (Number.parseInt(indicator.dataset.step) === nextStepNumber) {
+        indicator.classList.remove("completed")
+
+        const stepNum = Number.parseInt(indicator.dataset.step)
+
+        if (stepNum === nextStepNumber) {
           indicator.classList.add("active")
-        } else if (Number.parseInt(indicator.dataset.step) < nextStepNumber) {
+        } else if (stepNum < nextStepNumber) {
           indicator.classList.add("completed")
-        } else {
-          indicator.classList.remove("completed")
         }
       })
 
@@ -455,12 +468,14 @@ document.addEventListener("DOMContentLoaded", () => {
       // Update step indicators
       stepIndicators.forEach((indicator) => {
         indicator.classList.remove("active")
-        if (Number.parseInt(indicator.dataset.step) === prevStepNumber) {
+        indicator.classList.remove("completed")
+
+        const stepNum = Number.parseInt(indicator.dataset.step)
+
+        if (stepNum === prevStepNumber) {
           indicator.classList.add("active")
-        } else if (Number.parseInt(indicator.dataset.step) < prevStepNumber) {
+        } else if (stepNum < prevStepNumber) {
           indicator.classList.add("completed")
-        } else {
-          indicator.classList.remove("completed", "active")
         }
       })
 
@@ -483,48 +498,16 @@ document.addEventListener("DOMContentLoaded", () => {
       this.innerHTML = '<span class="loading-spinner"></span> Processing...'
       this.disabled = true
 
-      // Add payment processing bar
-      const paymentSection = document.querySelector("#step3 .checkout-section")
-      if (paymentSection) {
-        // Create payment processing element if it doesn't exist
-        if (!document.querySelector(".payment-processing")) {
-          const processingElement = document.createElement("div")
-          processingElement.className = "payment-processing"
-          processingElement.innerHTML = `
-            <p>Processing your payment. Please do not refresh the page.</p>
-            <div class="processing-bar">
-              <div class="processing-progress"></div>
-            </div>
-            <p class="processing-text">Verifying payment information...</p>
-          `
-          paymentSection.appendChild(processingElement)
-        }
-
-        // Animate the progress bar
-        const progressBar = document.querySelector(".processing-progress")
-        const processingText = document.querySelector(".processing-text")
-
-        if (progressBar && processingText) {
-          // Start progress animation
-          setTimeout(() => {
-            progressBar.style.width = "30%"
-            processingText.textContent = "Verifying payment information..."
-          }, 300)
-
-          setTimeout(() => {
-            progressBar.style.width = "60%"
-            processingText.textContent = "Processing transaction..."
-          }, 1000)
-
-          setTimeout(() => {
-            progressBar.style.width = "100%"
-            processingText.textContent = "Payment successful! Redirecting..."
-          }, 1800)
-        }
-      }
-
       // Simulate payment processing
       setTimeout(() => {
+        // Send email with order details
+        try {
+          sendOrderConfirmationEmail()
+          console.log("Order confirmation email function called")
+        } catch (error) {
+          console.error("Error sending order confirmation email:", error)
+        }
+
         // Move to confirmation step
         steps.forEach((step) => {
           step.classList.remove("active")
@@ -535,9 +518,13 @@ document.addEventListener("DOMContentLoaded", () => {
         // Update step indicators
         stepIndicators.forEach((indicator) => {
           indicator.classList.remove("active")
-          if (Number.parseInt(indicator.dataset.step) === 4) {
+          indicator.classList.remove("completed")
+
+          const stepNum = Number.parseInt(indicator.dataset.step)
+
+          if (stepNum === 4) {
             indicator.classList.add("active")
-          } else {
+          } else if (stepNum < 4) {
             indicator.classList.add("completed")
           }
         })
@@ -552,7 +539,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Scroll to top
         window.scrollTo(0, 0)
-      }, 2500)
+      }, 2000)
     })
   }
 
@@ -569,8 +556,14 @@ document.addEventListener("DOMContentLoaded", () => {
       const confirmationItem = document.createElement("div")
       confirmationItem.className = "confirmation-item"
       confirmationItem.innerHTML = `
-        <div class="item-name">${item.name} × ${item.quantity}</div>
-        <div class="item-price">${formatPrice(item.price * item.quantity)}</div>
+        <div class="item-image">
+          <img src="${item.image}" alt="${item.name}">
+        </div>
+        <div class="item-details">
+          <h3 class="item-name">${item.name}</h3>
+          <p class="item-price">${formatPrice(item.price)} × ${item.quantity}</p>
+        </div>
+        <div class="item-total">${formatPrice(item.price * item.quantity)}</div>
       `
       confirmationItemsContainer.appendChild(confirmationItem)
     })
@@ -619,6 +612,79 @@ document.addEventListener("DOMContentLoaded", () => {
     deliveryDateElement.textContent = `${minDeliveryStr} - ${maxDeliveryStr}`
   }
 
+  // Add this function after the setEstimatedDelivery function
+
+  // Function to send order confirmation email
+  function sendOrderConfirmationEmail() {
+    // Check if EmailJS is available
+    if (typeof emailjs === "undefined") {
+      console.error("EmailJS is not loaded. Email notification could not be sent.")
+      return
+    }
+
+    // Get customer information
+    const fullName = document.getElementById("fullName").value
+    const email = document.getElementById("email").value
+    const address = document.getElementById("address").value
+    const city = document.getElementById("city").value
+    const state = document.getElementById("state").value
+    const pincode = document.getElementById("pincode").value
+    const phone = document.getElementById("phone").value
+
+    // Get cart items
+    const cart = JSON.parse(localStorage.getItem("prinkwellness-cart") || "[]")
+
+    // Calculate totals
+    const subtotal = calculateSubtotal()
+    const shipping = 0 // Free shipping
+    const total = subtotal + shipping
+
+    // Format order items for email
+    let orderItemsText = ""
+    cart.forEach((item) => {
+      orderItemsText += `${item.name} - Quantity: ${item.quantity} - Price: ₹${item.price * item.quantity}\n`
+    })
+
+    // Prepare email data
+    const emailData = {
+      to_name: "PrinkWellness Team",
+      from_name: fullName,
+      from_email: email,
+      subject: "New Order Placed",
+      message: `
+New order details:
+
+Customer Information:
+Name: ${fullName}
+Email: ${email}
+Phone: ${phone}
+Address: ${address}, ${city}, ${state} - ${pincode}
+
+Order Items:
+${orderItemsText}
+
+Order Summary:
+Subtotal: ₹${subtotal}
+Shipping: ₹${shipping}
+Total: ₹${total}
+
+Order Date: ${new Date().toLocaleString()}
+    `,
+    }
+
+    console.log("Sending email with data:", emailData)
+
+    // Send email using EmailJS
+    emailjs
+      .send("service_apvc4bd", "template_ehkghel", emailData)
+      .then((response) => {
+        console.log("Order confirmation email sent successfully:", response)
+      })
+      .catch((error) => {
+        console.error("Failed to send order confirmation email:", error)
+      })
+  }
+
   // Add input event listeners for real-time validation
   const shippingInputs = document.querySelectorAll("#shippingForm input[required]")
   shippingInputs.forEach((input) => {
@@ -658,7 +724,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // Check step indicators
-    const indicators = document.querySelectorAll(".checkout-steps .checkout-step")
+    const indicators = document.querySelectorAll(".progress-step")
     console.log("Step indicators found:", indicators.length)
 
     // Check buttons

@@ -100,7 +100,7 @@ document.addEventListener("DOMContentLoaded", () => {
     cartItems.forEach((item, index) => {
       // Ensure image path is correct
       if (item.image && !item.image.startsWith("./") && !item.image.startsWith("/")) {
-        item.image = `./${item.image}`
+        item.image = './${item.image}'
       }
       
       const cartItem = document.createElement("div")

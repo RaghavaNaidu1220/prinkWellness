@@ -7,6 +7,7 @@
   <meta name="description" content="The science behind PrinkWellness - India's First Clinically Validated Vaginal Suppository for Menstrual Cramps">
   <link rel="stylesheet" href="./css/styles.css">
   <link rel="stylesheet" href="./css/science.css">
+  <link rel="stylesheet" href="./css/mobile.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -21,12 +22,11 @@
 
       <nav class="desktop-nav">
         <a href="./index.html" class="nav-link">Home</a>
-        <!-- <a href="./about.html" class="nav-link">About Us</a> -->
+        <a href="./science.html" class="nav-link active">Science</a>
         <a href="./shop.html" class="nav-link">Shop</a>
         <a href="./reviews.html" class="nav-link">Reviews</a>
         <a href="./contact.html" class="nav-link">Contact</a>
         <!-- <a href="./how-to-use.html" class="nav-link">How To Use</a> -->
-        <a href="./science.html" class="nav-link active">Science</a>
         <button class="cart-button" id="cartBtn">
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="cart-icon">
             <circle cx="9" cy="21" r="1"></circle>
@@ -68,13 +68,12 @@
     </div>
     <nav class="mobile-menu-nav">
       <a href="./index.html" class="mobile-nav-link">Home</a>
-      <!-- <a href="./about.html" class="mobile-nav-link">About Us</a> -->
+      <a href="./science.html" class="mobile-nav-link active">Science</a>
       <a href="./shop.html" class="mobile-nav-link">Shop</a>
       <a href="./reviews.html" class="mobile-nav-link">Reviews</a>
       <a href="./contact.html" class="mobile-nav-link">Contact</a>
       <!-- <a href="./how-to-use.html" class="mobile-nav-link">How To Use</a>
         -->
-      <a href="./science.html" class="mobile-nav-link active">Science</a>
     </nav>
   </div>
 
@@ -117,55 +116,36 @@
       </div>
     </section>
 
-    <!-- Ingredients Section
-    <section class="ingredients-section section-padding bg-light">
-      <div class="container">
-        <h2 class="section-title text-center animate-on-scroll">Our Plant-Based Ingredients</h2>
-        <p class="section-subtitle text-center animate-on-scroll" data-delay="100">Carefully selected natural ingredients with proven benefits for menstrual wellness.</p>
-        
-        <div class="ingredients-grid">
-          <div class="ingredient-card animate-on-scroll" data-delay="0">
-            <div class="ingredient-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
-                <path d="M2 17l10 5 10-5"></path>
-                <path d="M2 12l10 5 10-5"></path>
-              </svg>
-            </div>
-            <h3>Ginger Extract</h3>
-            <p>A powerful anti-inflammatory that helps reduce prostaglandin production, which is responsible for uterine contractions and pain.</p>
-          </div>
-          <div class="ingredient-card animate-on-scroll" data-delay="200">
-            <div class="ingredient-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
-              </svg>
-            </div>
-            <h3>Turmeric</h3>
-            <p>Contains curcumin, which has been shown to reduce inflammation and alleviate menstrual pain through multiple pathways.</p>
-          </div>
-          <div class="ingredient-card animate-on-scroll" data-delay="400">
-            <div class="ingredient-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-              </svg>
-            </div>
-            <h3>Cramp Bark</h3>
-            <p>A traditional remedy that helps relax the uterine muscles, reducing the intensity and frequency of menstrual cramps.</p>
-          </div>
-          <div class="ingredient-card animate-on-scroll" data-delay="600">
-            <div class="ingredient-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"></path>
-                <circle cx="12" cy="12" r="3"></circle>
-              </svg>
-            </div>
-            <h3>Fennel Extract</h3>
-            <p>Contains anethole, which has estrogen-like properties that can help balance hormones and reduce menstrual discomfort.</p>
-          </div>
-        </div>
+    <!-- Ingredients Section -->
+<section class="ingredients-section section-padding bg-light">
+  <div class="container">
+    <h2 class="section-title text-center animate-on-scroll">Our Plant-Based Ingredients</h2>
+    <p class="section-subtitle text-center animate-on-scroll" data-delay="100">Carefully selected natural ingredients with proven benefits for menstrual wellness.</p>
+    
+    <div class="ingredients-grid">
+      <div class="ingredient-card animate-on-scroll" data-delay="0">
+        <div class="ingredient-number">1</div>
+        <h3>Vijaya</h3>
+        <p>Powerful antispasmodic & analgesic that helps reduce uterine contractions and pain during menstruation.</p>
       </div>
-    </section> -->
+      <div class="ingredient-card animate-on-scroll" data-delay="200">
+        <div class="ingredient-number">2</div>
+        <h3>Peppermint Oil</h3>
+        <p>Cooling, soothing, and antimicrobial properties that provide immediate comfort and prevent infections.</p>
+      </div>
+      <div class="ingredient-card animate-on-scroll" data-delay="400">
+        <div class="ingredient-number">3</div>
+        <h3>Cocoa Butter</h3>
+        <p>Moisturizing, nourishing, and comforting base that melts at body temperature for optimal delivery.</p>
+      </div>
+      <div class="ingredient-card animate-on-scroll" data-delay="600">
+        <div class="ingredient-number">4</div>
+        <h3>Beeswax</h3>
+        <p>Natural emollient and stabilizer for clean absorption that helps maintain the suppository's shape until use.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
     <!-- How It Works Section -->
     <section class="how-it-works section-padding">
@@ -198,12 +178,12 @@
       </div>
     </section>
 
-    <!-- Research Team Section -->
+    <!-- Research Team Section
     <section class="research-team section-padding bg-light">
       <div class="container">
         <div class="two-column-layout">
           <div class="image-column animate-on-scroll">
-            <img src="./public/images/product-box.png" alt="Our Research Team" class="rounded-image">
+            <img src="./public/images/prink-girl.png" alt="Our Research Team" class="rounded-image">
           </div>
           <div class="content-column animate-on-scroll" data-delay="200">
             <h2 class="section-title">Our Research Team</h2>
@@ -214,7 +194,7 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
 
     <!-- FAQ Section -->
     <section class="faq-section section-padding">

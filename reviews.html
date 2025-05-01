@@ -3,31 +3,35 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Reviews - PrinkWellness</title>
+  <title>Customer Reviews - PrinkWellness</title>
   <meta name="description" content="Read what customers are saying about PrinkWellness products">
   <link rel="stylesheet" href="./css/styles.css">
-  <link rel="stylesheet" href="./css/animations.css">
-  <link rel="stylesheet" href="./css/cart.css">
-  <link rel="stylesheet" href="./css/contact.css">
-  <link rel="stylesheet" href="./css/home.css">
-  <link rel="stylesheet" href="./css/product.css">
   <link rel="stylesheet" href="./css/reviews.css">
-  <link rel="stylesheet" href="./css/slider.css">
+  <link rel="stylesheet" href="./css/mobile.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- EmailJS Library -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+      (function() {
+        // EmailJS configuration with your provided credentials
+        emailjs.init("wnc0CaYrKlWKSS39G");
+      })();
+    </script>
 </head>
 <body>
   <header class="fixed-header">
     <div class="container">
       <a href="./index.html" class="logo">
-        <img src="./public/images/prink-logo.png" alt="PrinkWellness" class="logo-img">
+        <img src="./images/prink-logo.png" alt="PrinkWellness" class="logo-img">
         <span class="logo-text">PrinkWellness</span>
       </a>
 
       <nav class="desktop-nav">
         <a href="./index.html" class="nav-link">Home</a>
-        <!-- <a href="./about.html" class="nav-link">About Us</a> -->
+        <a href="./science.html" class="nav-link">Science</a>
         <a href="./shop.html" class="nav-link">Shop</a>
         <a href="./reviews.html" class="nav-link active">Reviews</a>
         <a href="./contact.html" class="nav-link">Contact</a>
@@ -73,7 +77,7 @@
     </div>
     <nav class="mobile-menu-nav">
       <a href="./index.html" class="mobile-nav-link">Home</a>
-      <!-- <a href="./about.html" class="mobile-nav-link">About Us</a> -->
+      <a href=".science.html" class="mobile-nav-link">Science</a>
       <a href="./shop.html" class="mobile-nav-link">Shop</a>
       <a href="./reviews.html" class="mobile-nav-link active">Reviews</a>
       <a href="./contact.html" class="mobile-nav-link">Contact</a>
@@ -285,7 +289,7 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-about">
-          <img src="./public/images/prink-logo.png" alt="PrinkWellness" class="footer-logo">
+          <img src="./images/prink-logo.png" alt="PrinkWellness" class="footer-logo">
           <p class="footer-tagline">Relief, Redefined.</p>
           <p class="footer-description">
             India's First Clinically Validated Vaginal Suppository for Menstrual Cramps
@@ -295,7 +299,7 @@
           <h3 class="footer-heading">Quick Links</h3>
           <ul class="footer-nav">
             <li><a href="./index.html" class="footer-link">Home</a></li>
-            <!-- <li><a href="./about.html" class="footer-link">About Us</a></li> -->
+            <li><a href="./about.html" class="footer-link">About Us</a></li>
             <li><a href="./shop.html" class="footer-link">Shop</a></li>
             <li><a href="./science.html" class="footer-link">Science</a></li>
             <!-- <li><a href="./how-to-use.html" class="footer-link">How It Works</a></li> -->

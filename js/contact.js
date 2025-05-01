@@ -84,7 +84,12 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   })
 
-  // Contact form submission with enhanced feedback
+  // Check if EmailJS is loaded
+  function isEmailJSLoaded() {
+    return typeof emailjs !== "undefined"
+  }
+
+  // Contact form submission with email functionality
   const contactForm = document.getElementById("contactForm")
 
   if (contactForm) {
@@ -131,31 +136,81 @@ document.addEventListener("DOMContentLoaded", () => {
       submitBtn.innerHTML = '<span class="loading-spinner"></span> Sending...'
       submitBtn.disabled = true
 
-      // Simulate form submission (in a real app, this would be an API call)
-      setTimeout(() => {
-        // Create and show success message
-        showFormFeedback("success", "Thank you for your message! We'll get back to you soon.")
-
-        // Clear form
-        contactForm.reset()
-
-        // Reset submit button
+      // Check if EmailJS is available
+      if (!isEmailJSLoaded()) {
+        console.error("EmailJS is not loaded. Please check your EmailJS configuration.")
+        showFormFeedback(
+          "error",
+          "Email service is not available. Please try again later or contact us directly at info@prinkwellness.com",
+        )
         submitBtn.innerHTML = originalText
         submitBtn.disabled = false
+        return
+      }
 
-        // Add ripple effect to button
-        const ripple = document.createElement("span")
-        ripple.className = "ripple"
-        ripple.style.left = "50%"
-        ripple.style.top = "50%"
-        submitBtn.appendChild(ripple)
+      // Prepare email data
+      const emailData = {
+        to_name: "PrinkWellness Team",
+        from_name: name,
+        from_email: email,
+        subject: subject,
+        message: message,
+      }
 
-        setTimeout(() => {
-          if (ripple.parentNode === submitBtn) {
-            submitBtn.removeChild(ripple)
-          }
-        }, 600)
-      }, 1500)
+      console.log("Sending contact form email with data:", emailData)
+
+      // Send email using EmailJS with your provided credentials
+      try {
+        emailjs
+          .send("service_apvc4bd", "template_ehkghel", emailData)
+          .then((response) => {
+            console.log("Email sent successfully:", response)
+
+            // Show success message
+            showFormFeedback("success", "Thank you for your message! We'll get back to you soon.")
+
+            // Clear form
+            contactForm.reset()
+
+            // Reset submit button
+            submitBtn.innerHTML = originalText
+            submitBtn.disabled = false
+
+            // Add ripple effect to button
+            const ripple = document.createElement("span")
+            ripple.className = "ripple"
+            ripple.style.left = "50%"
+            ripple.style.top = "50%"
+            submitBtn.appendChild(ripple)
+
+            setTimeout(() => {
+              if (ripple.parentNode === submitBtn) {
+                submitBtn.removeChild(ripple)
+              }
+            }, 600)
+          })
+          .catch((error) => {
+            console.error("Email sending failed:", error)
+
+            // Show error message
+            showFormFeedback(
+              "error",
+              "Sorry, there was a problem sending your message. Please try again later or email us directly at info@prinkwellness.com",
+            )
+
+            // Reset submit button
+            submitBtn.innerHTML = originalText
+            submitBtn.disabled = false
+          })
+      } catch (error) {
+        console.error("EmailJS error:", error)
+        showFormFeedback(
+          "error",
+          "Sorry, there was a problem sending your message. Please try again later or email us directly at info@prinkwellness.com",
+        )
+        submitBtn.innerHTML = originalText
+        submitBtn.disabled = false
+      }
     })
 
     // Add focus effects to form fields

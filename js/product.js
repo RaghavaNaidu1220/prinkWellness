@@ -40,27 +40,34 @@ document.addEventListener("DOMContentLoaded", () => {
         price: 999,
         image: "./images/product-image-1.png",
         details: [
+          "Contains 2 suppositories (2.4g each)",
+          "100mg strength",
+          "Made with Vijaya, peppermint oil, cocoa butter, and beeswax",
           "Clinically validated for menstrual pain relief",
-          "Made with natural ingredients",
-          "Easy to use with applicator",
-          "Fast-acting formula",
-          "30-day supply",
+          "Fast-acting, targeted relief",
+          "100% natural ingredients",
         ],
+        instructions:
+          "Store in a cool, dry place. For best results, refrigerate before use. Follow the included instructions for proper insertion and use.",
       },
       {
         id: "2",
         name: "PrinkWellness 3-Pack",
         description:
-          "Save with our 3-pack bundle. Perfect for monthly use, this pack provides you with enough suppositories for consistent relief.",
+          "Save with our 3-pack bundle. Perfect for monthly use, this pack provides you with enough suppositories for consistent relief throughout your cycle.",
         price: 2499,
         image: "./images/product-image-2.jpeg",
         details: [
-          "3-month supply at a discounted price",
+          "Contains 6 suppositories (2.4g each)",
+          "100mg strength",
+          "Made with Vijaya, peppermint oil, cocoa butter, and beeswax",
           "Clinically validated for menstrual pain relief",
-          "Made with natural ingredients",
-          "Easy to use with applicator",
-          "Fast-acting formula",
+          "Fast-acting, targeted relief",
+          "100% natural ingredients",
+          "Save 15% compared to buying individually",
         ],
+        instructions:
+          "Store in a cool, dry place. For best results, refrigerate before use. Follow the included instructions for proper insertion and use.",
       },
     ]
 
@@ -69,10 +76,19 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // Find the selected product
-  const product = products.find((p) => p.id === productId) || products[0]
+  const product = products.find((p) => p.id === productId)
+
+  // Show product not found message if product doesn't exist
+  if (!product) {
+    document.getElementById("productNotFound").style.display = "block"
+    document.getElementById("productDetail").style.display = "none"
+    return
+  }
 
   // Render product details
   function renderProductDetails() {
+    console.log("Rendering product details for:", product)
+
     // Update page title
     document.title = `${product.name} - PrinkWellness`
 
@@ -116,6 +132,36 @@ document.addEventListener("DOMContentLoaded", () => {
         productDetailsList.appendChild(li)
       })
     }
+
+    // Update product instructions
+    const productInstructions = document.getElementById("productInstructions")
+    if (productInstructions && product.instructions) {
+      productInstructions.textContent = product.instructions
+    }
+
+    // Add animations
+    document.querySelector(".product-image-container").classList.add("animate-slide-in-left")
+    document.querySelector(".product-info-container").classList.add("animate-slide-in-right")
+  }
+
+  // Quantity controls
+  let quantity = 1
+  const quantityValue = document.getElementById("quantityValue")
+  const decreaseBtn = document.getElementById("decreaseQuantity")
+  const increaseBtn = document.getElementById("increaseQuantity")
+
+  if (decreaseBtn && increaseBtn && quantityValue) {
+    decreaseBtn.addEventListener("click", () => {
+      if (quantity > 1) {
+        quantity--
+        quantityValue.textContent = quantity
+      }
+    })
+
+    increaseBtn.addEventListener("click", () => {
+      quantity++
+      quantityValue.textContent = quantity
+    })
   }
 
   // Add to cart function
@@ -128,7 +174,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (existingProductIndex > -1) {
       // Increase quantity if product already in cart
-      cart[existingProductIndex].quantity += 1
+      cart[existingProductIndex].quantity += quantity
     } else {
       // Add new product to cart
       cart.push({
@@ -136,7 +182,7 @@ document.addEventListener("DOMContentLoaded", () => {
         name: product.name,
         price: product.price,
         image: product.image,
-        quantity: 1,
+        quantity: quantity,
       })
     }
 
@@ -147,7 +193,13 @@ document.addEventListener("DOMContentLoaded", () => {
     updateCartCount()
 
     // Show added to cart message
-    showMessage("Product added to cart!")
+    const addedMessage = document.getElementById("addedToCartMessage")
+    if (addedMessage) {
+      addedMessage.classList.add("show")
+      setTimeout(() => {
+        addedMessage.classList.remove("show")
+      }, 3000)
+    }
   }
 
   // Buy now function
@@ -158,40 +210,14 @@ document.addEventListener("DOMContentLoaded", () => {
       name: product.name,
       price: product.price,
       image: product.image,
-      quantity: 1,
+      quantity: quantity,
     }
 
     // Store in the regular cart but clear it first
     localStorage.setItem("prinkwellness-cart", JSON.stringify([buyNowItem]))
 
-    // Show message
-    showMessage("Redirecting to checkout...")
-
     // Redirect to checkout
-    setTimeout(() => {
-      window.location.href = "./checkout.html"
-    }, 1000)
-  }
-
-  // Show message function
-  function showMessage(message) {
-    const messageElement = document.createElement("div")
-    messageElement.className = "message"
-    messageElement.textContent = message
-    document.body.appendChild(messageElement)
-
-    // Show message
-    setTimeout(() => {
-      messageElement.classList.add("show")
-    }, 100)
-
-    // Hide message after 3 seconds
-    setTimeout(() => {
-      messageElement.classList.remove("show")
-      setTimeout(() => {
-        document.body.removeChild(messageElement)
-      }, 300)
-    }, 3000)
+    window.location.href = "./checkout.html"
   }
 
   // Update cart count
@@ -222,6 +248,22 @@ document.addEventListener("DOMContentLoaded", () => {
   const buyNowBtn = document.getElementById("buyNowBtn")
   if (buyNowBtn) {
     buyNowBtn.addEventListener("click", buyNow)
+  }
+
+  // Handle cart button clicks
+  const cartBtn = document.getElementById("cartBtn")
+  const mobileCartBtn = document.getElementById("mobileCartBtn")
+
+  if (cartBtn) {
+    cartBtn.addEventListener("click", () => {
+      window.location.href = "./cart.html"
+    })
+  }
+
+  if (mobileCartBtn) {
+    mobileCartBtn.addEventListener("click", () => {
+      window.location.href = "./cart.html"
+    })
   }
 
   // Initialize

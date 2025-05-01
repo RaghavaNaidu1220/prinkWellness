@@ -1,0 +1,42 @@
+/* Mobile View Fixes - Add these to your existing styles.css file */
+
+/* Fixed Header Styles */
+.fixed-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--white);
+    box-shadow: var(--shadow);
+    z-index: 1000; /* Increase z-index to ensure it stays on top */
+    padding: 0.75rem 0;
+  }
+  
+  /* Main Content Padding */
+  .main-content {
+    padding-top: 80px; /* Add padding to account for fixed header height */
+  }
+  
+  /* Mobile Specific Adjustments */
+  @media (max-width: 768px) {
+    .fixed-header {
+      padding: 0.5rem 0;
+    }
+  
+    .main-content {
+      padding-top: 70px; /* Adjust padding for mobile */
+    }
+  
+    /* Ensure images don't overflow their containers */
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  
+    /* Hero section adjustments */
+    .hero-slider-section .slide-image img,
+    .hero-banner .hero-image img {
+      margin-top: 1rem;
+    }
+  }
+  

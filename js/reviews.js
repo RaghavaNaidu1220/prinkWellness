@@ -1,4 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
+  // Initialize EmailJS if available
+  if (typeof emailjs !== "undefined") {
+    emailjs.init("wnc0CaYrKlWKSS39G")
+  }
+
   // Set current year in footer
   document.getElementById("currentYear").textContent = new Date().getFullYear()
 
@@ -180,7 +185,7 @@ document.addEventListener("DOMContentLoaded", () => {
     })
   })
 
-  // Review form submission with enhanced feedback
+  // Find the reviewForm event listener and modify it to send an email
   const reviewForm = document.getElementById("reviewForm")
 
   if (reviewForm) {
@@ -225,6 +230,39 @@ document.addEventListener("DOMContentLoaded", () => {
       const originalText = submitBtn.textContent
       submitBtn.innerHTML = '<span class="loading-spinner"></span> Submitting...'
       submitBtn.disabled = true
+
+      // Send review email notification
+      if (typeof emailjs !== "undefined") {
+        // Prepare email data
+        const emailData = {
+          to_name: "PrinkWellness Team",
+          from_name: name,
+          from_email: email,
+          subject: "New Product Review",
+          message: `
+New review submitted:
+
+Customer: ${name}
+Email: ${email}
+Rating: ${rating} stars
+Review: "${review}"
+
+Date: ${new Date().toLocaleString()}
+          `,
+        }
+
+        // Send email using EmailJS
+        emailjs
+          .send("service_apvc4bd", "template_ehkghel", emailData)
+          .then((response) => {
+            console.log("Review notification email sent successfully:", response)
+          })
+          .catch((error) => {
+            console.error("Failed to send review notification email:", error)
+          })
+      } else {
+        console.error("EmailJS is not loaded. Review notification email could not be sent.")
+      }
 
       // Simulate submission (in a real app, this would be an API call)
       setTimeout(() => {
@@ -368,128 +406,5 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       })
     })
-  }
-})
-document.addEventListener("DOMContentLoaded", () => {
-  // Initialize animations
-  initAnimations()
-
-  // Initialize rating buttons
-  initRatingButtons()
-
-  // Initialize review form
-  initReviewForm()
-})
-
-function initAnimations() {
-  // Animate elements when they come into view
-  const animatedElements = document.querySelectorAll(".animate-on-scroll")
-
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          const delay = entry.target.dataset.delay || 0
-          setTimeout(() => {
-            entry.target.classList.add("visible")
-          }, delay)
-        }
-      })
-    },
-    { threshold: 0.1 },
-  )
-
-  animatedElements.forEach((element) => {
-    observer.observe(element)
-  })
-}
-
-function initRatingButtons() {
-  const ratingButtons = document.querySelectorAll(".rating-btn")
-  const ratingInput = document.getElementById("rating")
-
-  ratingButtons.forEach((button) => {
-    button.addEventListener("click", function () {
-      const rating = this.dataset.rating
-      ratingInput.value = rating
-
-      // Update active state
-      ratingButtons.forEach((btn) => {
-        if (btn.dataset.rating <= rating) {
-          btn.classList.add("active")
-        } else {
-          btn.classList.remove("active")
-        }
-      })
-    })
-  })
-
-  // Set default rating
-  const defaultRating = 5
-  ratingButtons.forEach((btn) => {
-    if (btn.dataset.rating <= defaultRating) {
-      btn.classList.add("active")
-    }
-  })
-}
-
-function initReviewForm() {
-  const reviewForm = document.getElementById("reviewForm")
-
-  if (reviewForm) {
-    reviewForm.addEventListener("submit", (e) => {
-      e.preventDefault()
-
-      // Get form data
-      const name = document.getElementById("name").value
-      const email = document.getElementById("email").value
-      const rating = document.getElementById("rating").value
-      const review = document.getElementById("review").value
-
-      // In a real application, you would send this data to a server
-      console.log("Review submitted:", { name, email, rating, review })
-
-      // Show success message or redirect
-      alert("Thank you for your review!")
-
-      // Reset form
-      reviewForm.reset()
-
-      // Reset rating buttons
-      const ratingButtons = document.querySelectorAll(".rating-btn")
-      ratingButtons.forEach((btn) => {
-        if (btn.dataset.rating <= 5) {
-          btn.classList.add("active")
-        } else {
-          btn.classList.remove("active")
-        }
-      })
-    })
-  }
-}
-
-// Add ripple effect to buttons
-document.addEventListener("click", (e) => {
-  if (
-    e.target.classList.contains("primary-button") ||
-    e.target.classList.contains("secondary-button") ||
-    e.target.classList.contains("rating-btn")
-  ) {
-    const button = e.target
-    const ripple = document.createElement("span")
-    ripple.classList.add("ripple")
-
-    const rect = button.getBoundingClientRect()
-    const x = e.clientX - rect.left
-    const y = e.clientY - rect.top
-
-    ripple.style.left = x + "px"
-    ripple.style.top = y + "px"
-
-    button.appendChild(ripple)
-
-    setTimeout(() => {
-      ripple.remove()
-    }, 600)
   }
 })

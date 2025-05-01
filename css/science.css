@@ -1,409 +1,581 @@
 /* Science Page Styles */
 :root {
-    --primary: #f472b6;
-    --primary-dark: #db2777;
-    --primary-light: #fbcfe8;
-    --secondary: #d8e0d1;
-    --text-dark: #4b5563;
-    --text-light: #9ca3af;
-    --background: #f9fafb;
-    --white: #ffffff;
-    --black: #000000;
-    --gray: #f3f4f6;
-    --border-color: #e5e7eb;
-    --background-hover: rgba(244, 114, 182, 0.1);
-    --shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  --premium-accent: #a16a88;
+  --premium-accent-light: #f3e9ef;
+  --premium-text: #4a3c39;
+  --premium-text-light: #7c7270;
+  --premium-border: #e8e1e0;
+  --premium-background: #f9f7f7;
+  --premium-white: #ffffff;
+  --premium-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+  --premium-shadow-hover: 0 15px 40px rgba(0, 0, 0, 0.08);
+  --premium-radius: 12px;
+  --premium-transition: all 0.3s ease;
+}
+
+/* Science Hero Section */
+.science-hero-section {
+  background-color: var(--background);
+  padding: 120px 0 60px;
+  text-align: center;
+}
+
+.science-page-title {
+  color: var(--text-dark);
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  font-family: var(--font-serif);
+}
+
+.science-subtitle {
+  color: var(--text-dark);
+  font-size: 1.2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Science Section Padding */
+.science-section-padding {
+  padding: 80px 0;
+}
+
+/* Science Two Column Layout */
+.science-two-column-layout {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+}
+
+.science-content-column,
+.science-image-column {
+  flex: 1;
+}
+
+.science-content-column h2 {
+  color: var(--text-dark);
+  font-size: 2.2rem;
+  margin-bottom: 1.5rem;
+  font-family: var(--font-serif);
+}
+
+.science-content-column p {
+  color: var(--text-dark);
+  margin-bottom: 1.2rem;
+  line-height: 1.7;
+}
+
+.science-image-column img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+}
+
+/* Science Stats Container */
+.science-stats-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.science-stat-item {
+  flex: 1;
+  min-width: 150px;
+  text-align: center;
+  padding: 1.5rem;
+  background-color: var(--primary-light);
+  border-radius: 8px;
+}
+
+.science-stat-number {
+  display: block;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--primary-dark);
+  margin-bottom: 0.5rem;
+  font-family: var(--font-serif);
+}
+
+.science-stat-item p {
+  margin-bottom: 0;
+  font-size: 0.9rem;
+}
+
+/* Science Background Light */
+.science-bg-light {
+  background-color: var(--gray);
+}
+
+/* Science Section Title and Subtitle */
+.science-section-title {
+  color: var(--text-dark);
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+  font-family: var(--font-serif);
+}
+
+.science-section-subtitle {
+  color: var(--text-dark);
+  font-size: 1.1rem;
+  margin-bottom: 3rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.science-text-center {
+  text-align: center;
+}
+
+/* Science Ingredients Section */
+.science-ingredients-section {
+  padding: 5rem 0;
+  background-color: var(--white);
+}
+
+.science-ingredients-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+  margin: 3rem 0;
+}
+
+.science-ingredient-card {
+  flex: 1;
+  min-width: 220px;
+  text-align: center;
+  padding: 2rem;
+  position: relative;
+}
+
+.science-ingredient-icon {
+  width: 5rem;
+  height: 5rem;
+  background-color: var(--primary-light);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  color: var(--primary-dark);
+}
+
+.science-ingredient-card h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--primary-dark);
+  margin-bottom: 0.75rem;
+  font-family: var(--font-serif);
+}
+
+.science-ingredient-card p {
+  font-size: 0.9375rem;
+  color: var(--text-dark);
+  line-height: 1.6;
+}
+
+/* Update the ingredient section in the science page */
+.science-ingredient-number {
+  width: 3rem;
+  height: 3rem;
+  background-color: var(--primary-light);
+  color: var(--primary-dark);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0 auto 1.5rem;
+}
+
+/* Science Process Steps */
+.science-process-steps {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 3rem;
+  gap: 20px;
+}
+
+.science-process-step {
+  flex: 1;
+  min-width: 220px;
+  text-align: center;
+  padding: 2rem;
+  background-color: var(--white);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  position: relative;
+}
+
+.science-step-number {
+  width: 40px;
+  height: 40px;
+  background-color: var(--primary);
+  color: var(--white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.science-process-step h3 {
+  color: var(--text-dark);
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+  font-family: var(--font-serif);
+}
+
+.science-process-step p {
+  color: var(--text-dark);
+  line-height: 1.6;
+}
+
+/* Science FAQ Section */
+.science-faq-container {
+  max-width: 800px;
+  margin: 3rem auto 0;
+}
+
+.science-faq-item {
+  margin-bottom: 1.5rem;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.science-faq-question {
+  padding: 1.5rem;
+  background-color: var(--white);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.science-faq-question h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: var(--text-dark);
+  font-family: var(--font-serif);
+}
+
+.science-toggle-icon {
+  font-size: 1.5rem;
+  color: var(--primary);
+}
+
+.science-faq-answer {
+  padding: 0 1.5rem;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+.science-faq-item.active .science-faq-answer {
+  padding: 0 1.5rem 1.5rem;
+  max-height: 500px;
+}
+
+.science-faq-item.active .science-toggle-icon {
+  transform: rotate(45deg);
+}
+
+/* Science CTA Section */
+.science-cta-section {
+  background-color: var(--primary);
+  color: var(--white);
+  text-align: center;
+  padding: 80px 0;
+}
+
+.science-cta-section .science-section-title {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--white);
+}
+
+.science-cta-section .science-section-description {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.science-cta-section .science-primary-button {
+  background-color: var(--white);
+  color: var(--primary);
+  border: 2px solid var(--white);
+}
+
+.science-cta-section .science-primary-button:hover {
+  background-color: transparent;
+  color: var(--white);
+}
+
+/* Science Rounded Image */
+.science-rounded-image {
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+}
+
+/* Science Responsive Styles */
+@media (max-width: 992px) {
+  .science-two-column-layout {
+    flex-direction: column;
+    gap: 40px;
   }
-  
-  /* Hero Section */
-  .hero-section {
-    background-color: var(--background);
-    padding: 120px 0 60px;
-    text-align: center;
+
+  .science-image-column {
+    order: -1;
   }
-  
-  .page-title {
-    color: var(--text-dark);
-    font-size: 3rem;
-    margin-bottom: 1rem;
-    font-weight: 700;
-    font-family: var(--font-serif);
-  }
-  
-  .subtitle {
-    color: var(--text-dark);
-    font-size: 1.2rem;
-    max-width: 800px;
-    margin: 0 auto;
-    line-height: 1.6;
-  }
-  
-  /* Section Padding */
-  .section-padding {
-    padding: 80px 0;
-  }
-  
-  /* Two Column Layout */
-  .two-column-layout {
-    display: flex;
-    align-items: center;
-    gap: 60px;
-  }
-  
-  .content-column,
-  .image-column {
-    flex: 1;
-  }
-  
-  .content-column h2 {
-    color: var(--text-dark);
-    font-size: 2.2rem;
-    margin-bottom: 1.5rem;
-    font-family: var(--font-serif);
-  }
-  
-  .content-column p {
-    color: var(--text-dark);
-    margin-bottom: 1.2rem;
-    line-height: 1.7;
-  }
-  
-  .image-column img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: var(--shadow);
-  }
-  
-  /* Stats Container */
-  .stats-container {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 2rem;
-    flex-wrap: wrap;
-    gap: 20px;
-  }
-  
-  .stat-item {
-    flex: 1;
-    min-width: 150px;
-    text-align: center;
-    padding: 1.5rem;
-    background-color: var(--primary-light);
-    border-radius: 8px;
-  }
-  
-  .stat-number {
-    display: block;
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: var(--primary-dark);
-    margin-bottom: 0.5rem;
-    font-family: var(--font-serif);
-  }
-  
-  .stat-item p {
-    margin-bottom: 0;
-    font-size: 0.9rem;
-  }
-  
-  /* Background Light */
-  .bg-light {
-    background-color: var(--gray);
-  }
-  
-  /* Section Title and Subtitle */
-  .section-title {
-    color: var(--text-dark);
-    font-size: 2.2rem;
-    margin-bottom: 1rem;
-    font-family: var(--font-serif);
-  }
-  
-  .section-subtitle {
-    color: var(--text-dark);
-    font-size: 1.1rem;
-    margin-bottom: 3rem;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  
-  .text-center {
-    text-align: center;
-  }
-  
-  /* Ingredients Grid */
-  .ingredients-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
+  .science-process-steps {
     gap: 30px;
-    margin-top: 3rem;
   }
-  
-  .ingredient-card {
-    background-color: var(--white);
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: var(--shadow);
-    text-align: center;
-    transition: all 0.3s ease;
+
+  .science-process-step {
+    min-width: calc(50% - 30px);
   }
-  
-  .ingredient-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-  }
-  
-  .ingredient-icon {
-    width: 80px;
-    height: 80px;
-    margin: 0 auto 1.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--primary);
-  }
-  
-  .ingredient-card h3 {
-    color: var(--text-dark);
-    margin-bottom: 1rem;
-    font-size: 1.3rem;
-    font-family: var(--font-serif);
-  }
-  
-  .ingredient-card p {
-    color: var(--text-dark);
-    line-height: 1.6;
-  }
-  
-  /* Process Steps */
-  .process-steps {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    margin-top: 3rem;
-    gap: 20px;
-  }
-  
-  .process-step {
-    flex: 1;
-    min-width: 220px;
-    text-align: center;
-    padding: 2rem;
-    background-color: var(--white);
-    border-radius: 8px;
-    box-shadow: var(--shadow);
-    position: relative;
-  }
-  
-  .step-number {
-    width: 40px;
-    height: 40px;
-    background-color: var(--primary);
-    color: var(--white);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 700;
-    font-size: 1.2rem;
-  }
-  
-  .process-step h3 {
-    color: var(--text-dark);
-    margin-bottom: 1rem;
-    font-size: 1.3rem;
-    font-family: var(--font-serif);
-  }
-  
-  .process-step p {
-    color: var(--text-dark);
-    line-height: 1.6;
-  }
-  
-  /* FAQ Section */
-  .faq-container {
-    max-width: 800px;
-    margin: 3rem auto 0;
-  }
-  
-  .faq-item {
-    margin-bottom: 1.5rem;
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    overflow: hidden;
-  }
-  
-  .faq-question {
-    padding: 1.5rem;
-    background-color: var(--white);
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .faq-question h3 {
-    margin: 0;
-    font-size: 1.1rem;
-    color: var(--text-dark);
-    font-family: var(--font-serif);
-  }
-  
-  .toggle-icon {
-    font-size: 1.5rem;
-    color: var(--primary);
-  }
-  
-  .faq-answer {
-    padding: 0 1.5rem;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease, padding 0.3s ease;
-  }
-  
-  .faq-item.active .faq-answer {
-    padding: 0 1.5rem 1.5rem;
-    max-height: 500px;
-  }
-  
-  .faq-item.active .toggle-icon {
-    transform: rotate(45deg);
-  }
-  
-  /* CTA Section */
-  .cta-section {
-    background-color: var(--primary);
-    color: var(--white);
-    text-align: center;
-    padding: 80px 0;
-  }
-  
-  .cta-section .section-title {
+}
+
+@media (max-width: 768px) {
+  .science-page-title {
     font-size: 2.5rem;
-    margin-bottom: 1.5rem;
-    color: var(--white);
   }
-  
-  .cta-section .section-description {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
+
+  .science-section-title {
+    font-size: 2rem;
   }
-  
-  .cta-section .primary-button {
-    background-color: var(--white);
-    color: var(--primary);
-    border: 2px solid var(--white);
+
+  .science-stats-container {
+    flex-direction: column;
   }
-  
-  .cta-section .primary-button:hover {
-    background-color: transparent;
-    color: var(--white);
+
+  .science-stat-item {
+    margin: 0.5rem 0;
   }
-  
-  /* Rounded Image */
-  .rounded-image {
-    border-radius: 8px;
-    box-shadow: var(--shadow);
+
+  .science-process-step {
+    min-width: 100%;
   }
-  
-  /* Responsive Styles */
-  @media (max-width: 992px) {
-    .two-column-layout {
-      flex-direction: column;
-      gap: 40px;
-    }
-  
-    .image-column {
-      order: -1;
-    }
-  
-    .process-steps {
-      gap: 30px;
-    }
-  
-    .process-step {
-      min-width: calc(50% - 30px);
-    }
+
+  .science-section-padding {
+    padding: 60px 0;
   }
-  
-  @media (max-width: 768px) {
-    .page-title {
-      font-size: 2.5rem;
-    }
-  
-    .section-title {
-      font-size: 2rem;
-    }
-  
-    .stats-container {
-      flex-direction: column;
-    }
-  
-    .stat-item {
-      margin: 0.5rem 0;
-    }
-  
-    .process-step {
-      min-width: 100%;
-    }
-  
-    .section-padding {
-      padding: 60px 0;
-    }
+}
+
+@media (max-width: 576px) {
+  .science-page-title {
+    font-size: 2rem;
   }
-  
-  @media (max-width: 576px) {
-    .page-title {
-      font-size: 2rem;
-    }
-  
-    .subtitle {
-      font-size: 1rem;
-    }
-  
-    .section-title {
-      font-size: 1.8rem;
-    }
-  
-    .section-subtitle {
-      font-size: 1rem;
-    }
+
+  .science-subtitle {
+    font-size: 1rem;
   }
-  
-  /* Animation Classes */
-  .animate-on-scroll {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
+
+  .science-section-title {
+    font-size: 1.8rem;
   }
-  
-  .animate-on-scroll.active {
-    opacity: 1;
-    transform: translateY(0);
+
+  .science-section-subtitle {
+    font-size: 1rem;
   }
-  
-  [data-delay="100"] {
-    transition-delay: 0.1s;
-  }
-  
-  [data-delay="200"] {
-    transition-delay: 0.2s;
-  }
-  
-  [data-delay="300"] {
-    transition-delay: 0.3s;
-  }
-  
-  [data-delay="400"] {
-    transition-delay: 0.4s;
-  }
-  
-  [data-delay="600"] {
-    transition-delay: 0.6s;
-  }
-  
+}
+
+/* Science Animation Classes */
+.science-animate-on-scroll {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.science-animate-on-scroll.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.science-animate-on-scroll[data-delay="100"] {
+  transition-delay: 0.1s;
+}
+
+.science-animate-on-scroll[data-delay="200"] {
+  transition-delay: 0.2s;
+}
+
+.science-animate-on-scroll[data-delay="300"] {
+  transition-delay: 0.3s;
+}
+
+.science-animate-on-scroll[data-delay="400"] {
+  transition-delay: 0.4s;
+}
+
+.science-animate-on-scroll[data-delay="600"] {
+  transition-delay: 0.6s;
+}
+
+/* Keep original styles for elements that might be shared */
+.hero-section {
+  background-color: var(--background);
+  padding: 120px 0 60px;
+  text-align: center;
+}
+
+.page-title {
+  color: var(--text-dark);
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  font-family: var(--font-serif);
+}
+
+.subtitle {
+  color: var(--text-dark);
+  font-size: 1.2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.section-padding {
+  padding: 80px 0;
+}
+
+.two-column-layout {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+}
+
+.content-column,
+.image-column {
+  flex: 1;
+}
+
+.content-column h2 {
+  color: var(--text-dark);
+  font-size: 2.2rem;
+  margin-bottom: 1.5rem;
+  font-family: var(--font-serif);
+}
+
+.content-column p {
+  color: var(--text-dark);
+  margin-bottom: 1.2rem;
+  line-height: 1.7;
+}
+
+.image-column img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+}
+
+.stats-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.stat-item {
+  flex: 1;
+  min-width: 150px;
+  text-align: center;
+  padding: 1.5rem;
+  background-color: var(--primary-light);
+  border-radius: 8px;
+}
+
+.stat-number {
+  display: block;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--primary-dark);
+  margin-bottom: 0.5rem;
+  font-family: var(--font-serif);
+}
+
+.stat-item p {
+  margin-bottom: 0;
+  font-size: 0.9rem;
+}
+
+.bg-light {
+  background-color: var(--gray);
+}
+
+.section-title {
+  color: var(--text-dark);
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+  font-family: var(--font-serif);
+}
+
+.section-subtitle {
+  color: var(--text-dark);
+  font-size: 1.1rem;
+  margin-bottom: 3rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.ingredients-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-top: 3rem;
+}
+
+.ingredient-card {
+  background-color: var(--white);
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.ingredient-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.ingredient-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary);
+}
+
+.ingredient-card h3 {
+  color: var(--text-dark);
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+  font-family: var(--font-serif);
+}
+
+.ingredient-card p {
+  color: var(--text-dark);
+  line-height: 1.6;
+}

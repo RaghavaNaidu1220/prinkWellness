@@ -6,15 +6,20 @@
   <title>Contact Us - PrinkWellness</title>
   <meta name="description" content="Get in touch with PrinkWellness for questions, feedback, or support">
   <link rel="stylesheet" href="./css/styles.css">
-  <link rel="stylesheet" href="./css/animations.css">
-  <link rel="stylesheet" href="./css/cart.css">
   <link rel="stylesheet" href="./css/contact.css">
-  <link rel="stylesheet" href="./css/home.css">
-  <link rel="stylesheet" href="./css/product.css">
-  <link rel="stylesheet" href="./css/reviews.css">
+  <link rel="stylesheet" href="./css/mobile.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- EmailJS Library -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script type="text/javascript">
+    (function() {
+      // EmailJS configuration with your provided credentials
+      emailjs.init("wnc0CaYrKlWKSS39G");
+    })();
+  </script>
 </head>
 <body>
   <header class="fixed-header">
@@ -26,7 +31,7 @@
 
       <nav class="desktop-nav">
         <a href="./index.html" class="nav-link">Home</a>
-        <!-- <a href="./about.html" class="nav-link">About Us</a> -->
+        <a href="./science.html" class="nav-link">Science</a>
         <a href="./shop.html" class="nav-link">Shop</a>
         <a href="./reviews.html" class="nav-link">Reviews</a>
         <a href="./contact.html" class="nav-link active">Contact</a>
@@ -72,7 +77,7 @@
     </div>
     <nav class="mobile-menu-nav">
       <a href="./index.html" class="mobile-nav-link">Home</a>
-      <!-- <a href="./about.html" class="mobile-nav-link">About Us</a> -->
+      <a href="./science.html" class="mobile-nav-link">Science</a>
       <a href="./shop.html" class="mobile-nav-link">Shop</a>
       <a href="./reviews.html" class="mobile-nav-link">Reviews</a>
       <a href="./contact.html" class="mobile-nav-link active">Contact</a>
@@ -267,46 +272,6 @@
               </p>
             </div>
           </div>
-
-          <div class="faq-item animate-on-scroll" data-delay="800">
-            <div class="faq-question">
-              <h3>How should I store my PrinkWellness products?</h3>
-              <button class="faq-toggle">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="plus-icon">
-                  <line x1="12" y1="5" x2="12" y2="19"></line>
-                  <line x1="5" y1="12" x2="19" y2="12"></line>
-                </svg>
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="minus-icon">
-                  <line x1="5" y1="12" x2="19" y2="12"></line>
-                </svg>
-              </button>
-            </div>
-            <div class="faq-answer">
-              <p>
-                Store in a cool, dry place away from direct sunlight. For best results, refrigerate the suppositories before use to ensure they are firm for easier insertion. Do not freeze the products.
-              </p>
-            </div>
-          </div>
-
-          <div class="faq-item animate-on-scroll" data-delay="1000">
-            <div class="faq-question">
-              <h3>Do you ship internationally?</h3>
-              <button class="faq-toggle">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="plus-icon">
-                  <line x1="12" y1="5" x2="12" y2="19"></line>
-                  <line x1="5" y1="12" x2="19" y2="12"></line>
-                </svg>
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="minus-icon">
-                  <line x1="5" y1="12" x2="19" y2="12"></line>
-                </svg>
-              </button>
-            </div>
-            <div class="faq-answer">
-              <p>
-                Currently, we ship throughout India. We are working on expanding our shipping capabilities to other countries and will update our website when international shipping becomes available.
-              </p>
-            </div>
-          </div>
         </div>
       </div>
     </section>
@@ -326,8 +291,7 @@
           <h3 class="footer-heading">Quick Links</h3>
           <ul class="footer-nav">
             <li><a href="./index.html" class="footer-link">Home</a></li>
-            <!-- <li><a href="./about.html" class="footer-link">About Us</a></li>
-              -->
+            <!-- <li><a href="./about.html" class="footer-link">About Us</a></li> -->
             <li><a href="./shop.html" class="footer-link">Shop</a></li>
             <li><a href="./science.html" class="footer-link">Science</a></li>
             <!-- <li><a href="./how-to-use.html" class="footer-link">How It Works</a></li> -->
