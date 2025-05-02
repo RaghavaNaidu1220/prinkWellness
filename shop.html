@@ -1,83 +1,255 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Shop - PrinkWellness</title>
-<meta name="description" content="Shop PrinkWellness products for menstrual pain relief">
-<link rel="stylesheet" href="./css/styles.css">
-<link rel="stylesheet" href="./css/shop.css">
-<link rel="stylesheet" href="./css/mobile.css">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop - PrinkWellness</title>
+  <meta name="description" content="Shop for PrinkWellness products for menstrual pain relief">
+  <link rel="stylesheet" href="./css/styles.css">
+  <link rel="stylesheet" href="./css/shop.css">
+  <link rel="stylesheet" href="./css/slider.css">
+  <link rel="stylesheet" href="./css/updates.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* Reviews Section Styling */
+    .product-reviews-section {
+      margin-top: 60px;
+      padding-top: 30px;
+    }
+    
+    .reviews-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 32px;
+      color: #4a3a3a;
+      margin-bottom: 30px;
+    }
+    
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-bottom: 60px;
+    }
+    
+    .review-card {
+      background-color: #f8f8f8;
+      border-radius: 8px;
+      padding: 30px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .reviewer-name {
+      font-weight: 600;
+      font-size: 18px;
+      color: #4a3a3a;
+      margin: 0;
+      margin-bottom: 5px;
+    }
+    
+    .review-date {
+      font-size: 16px;
+      color: #666;
+      margin-bottom: 15px;
+      display: block;
+    }
+    
+    .review-stars {
+      display: flex;
+      gap: 5px;
+      margin-bottom: 15px;
+    }
+    
+    .star-icon {
+      color: #a67c98;
+      font-size: 18px;
+    }
+    
+    .review-content {
+      font-size: 16px;
+      line-height: 1.6;
+      color: #4a3a3a;
+      flex-grow: 1;
+    }
+    
+    /* Review Form */
+    .review-form-container {
+      background-color: #f8f8f8;
+      border-radius: 8px;
+      padding: 40px;
+      margin-top: 40px;
+    }
+    
+    .review-form-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 28px;
+      color: #4a3a3a;
+      margin-top: 0;
+      margin-bottom: 15px;
+    }
+    
+    .review-form-description {
+      font-size: 16px;
+      color: #666;
+      margin-bottom: 30px;
+      line-height: 1.6;
+    }
+    
+    .form-group {
+      margin-bottom: 25px;
+    }
+    
+    .form-label {
+      display: block;
+      margin-bottom: 10px;
+      font-size: 16px;
+      color: #4a3a3a;
+      font-weight: 500;
+    }
+    
+    .form-input {
+      width: 100%;
+      padding: 12px 15px;
+      border: 1px solid #e0e0e0;
+      border-radius: 6px;
+      font-size: 16px;
+      background-color: #fff;
+    }
+    
+    .form-textarea {
+      width: 100%;
+      padding: 12px 15px;
+      border: 1px solid #e0e0e0;
+      border-radius: 6px;
+      font-size: 16px;
+      min-height: 150px;
+      resize: vertical;
+      background-color: #fff;
+    }
+    
+    .rating-group {
+      margin-bottom: 25px;
+    }
+    
+    .rating-label {
+      display: block;
+      margin-bottom: 10px;
+      font-size: 16px;
+      color: #4a3a3a;
+      font-weight: 500;
+    }
+    
+    .star-rating {
+      display: flex;
+      gap: 10px;
+    }
+    
+    .star-rating input {
+      display: none;
+    }
+    
+    .star-rating label {
+      color: #a67c98;
+      font-size: 24px;
+      cursor: pointer;
+    }
+    
+    .submit-review-btn {
+      background-color: #a67c98;
+      color: white;
+      border: none;
+      border-radius: 30px;
+      padding: 12px 35px;
+      font-size: 16px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+    
+    .submit-review-btn:hover {
+      background-color: #8e6683;
+    }
+    
+    /* Responsive adjustments */
+    @media (max-width: 992px) {
+      .reviews-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .reviews-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .review-form-container {
+        padding: 30px 20px;
+      }
+    }
+  </style>
 </head>
 <body>
-<header class="fixed-header">
-  <div class="container">
-    <a href="./index.html" class="logo">
-      <img src="./public/images/prink-logo.png" alt="PrinkWellness" class="logo-img">
-      <span class="logo-text">PrinkWellness</span>
-    </a>
+  <header class="fixed-header">
+    <div class="container">
+      <a href="./index.html" class="logo">
+        <img src="./public/images/prink-logo.png" alt="PrinkWellness" class="logo-img">
+        <span class="logo-text">PrinkWellness</span>
+      </a>
 
-    <nav class="desktop-nav">
-      <a href="./index.html" class="nav-link">Home</a>
-      <a href="./science.html" class="nav-link">Science</a>
-      <a href="./shop.html" class="nav-link active">Shop</a>
-      <a href="./reviews.html" class="nav-link">Reviews</a>
-      <a href="./contact.html" class="nav-link">Contact</a>
-      <!-- <a href="./how-to-use.html" class="nav-link">How To Use</a> -->
-      <button class="cart-button" id="cartBtn">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="cart-icon">
-          <circle cx="9" cy="21" r="1"></circle>
-          <circle cx="20" cy="21" r="1"></circle>
-          <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
-        </svg>
-        <span class="cart-count" id="cartCount">0</span>
-      </button>
-    </nav>
+      <nav class="desktop-nav">
+        <a href="./index.html" class="nav-link">Home</a>
+        <a href="./science.html" class="nav-link">Science</a>
+        <a href="./shop.html" class="nav-link active">Shop</a>
+        <a href="./contact.html" class="nav-link">Contact</a>
+        <button class="cart-button" id="cartBtn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="cart-icon">
+            <circle cx="9" cy="21" r="1"></circle>
+            <circle cx="20" cy="21" r="1"></circle>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+          </svg>
+          <span class="cart-count" id="cartCount">0</span>
+        </button>
+      </nav>
 
-    <div class="mobile-nav-container">
-      <button class="cart-button" id="mobileCartBtn">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="cart-icon">
-          <circle cx="9" cy="21" r="1"></circle>
-          <circle cx="20" cy="21" r="1"></circle>
-          <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
-        </svg>
-        <span class="cart-count" id="mobileCartCount">0</span>
-      </button>
-      <button class="menu-button" id="menuBtn">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="menu-icon">
-          <line x1="3" y1="12" x2="21" y2="12"></line>
-          <line x1="3" y1="6" x2="21" y2="6"></line>
-          <line x1="3" y1="18" x2="21" y2="18"></line>
+      <div class="mobile-nav-container">
+        <button class="cart-button" id="mobileCartBtn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="cart-icon">
+            <circle cx="9" cy="21" r="1"></circle>
+            <circle cx="20" cy="21" r="1"></circle>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+          </svg>
+          <span class="cart-count" id="mobileCartCount">0</span>
+        </button>
+        <button class="menu-button" id="menuBtn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="menu-icon">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu-header">
+      <button class="close-menu" id="closeMenu">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
         </svg>
       </button>
     </div>
+    <nav class="mobile-menu-nav">
+      <a href="./index.html" class="mobile-nav-link">Home</a>
+      <a href="./science.html" class="mobile-nav-link">Science</a>
+      <a href="./shop.html" class="mobile-nav-link active">Shop</a>
+      <a href="./contact.html" class="mobile-nav-link">Contact</a>
+    </nav>
   </div>
-</header>
-
-<div class="mobile-menu" id="mobileMenu">
-  <div class="mobile-menu-header">
-    <button class="close-menu" id="closeMenu">
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <line x1="18" y1="6" x2="6" y2="18"></line>
-        <line x1="6" y1="6" x2="18" y2="18"></line>
-      </svg>
-    </button>
-  </div>
-  <nav class="mobile-menu-nav">
-    <a href="./index.html" class="mobile-nav-link">Home</a>
-    <a href="./science.html" class="mobile-nav-link">Science</a>
-    <a href="./shop.html" class="mobile-nav-link active">Shop</a>
-    <a href="./reviews.html" class="mobile-nav-link">Reviews</a>
-    <a href="./contact.html" class="mobile-nav-link">Contact</a>
-    <!-- <a href="./how-to-use.html" class="mobile-nav-link">How To Use</a> -->
-  </nav>
-</div>
-
-<!-- Rest of the content remains the same -->
-
 
   <main class="main-content">
     <!-- Products Section -->
@@ -97,123 +269,248 @@
     </section>
 
     <!-- Product Detail Section -->
-    
-<div id="productDetailSection" class="product-detail-section">
-  <div class="container">
-    <button id="backToProducts" class="back-to-products">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <line x1="19" y1="12" x2="5" y2="12"></line>
-        <polyline points="12 19 5 12 12 5"></polyline>
-      </svg>
-      Back to Products
-    </button>
+    <div id="productDetailSection" class="product-detail-section">
+      <div class="container">
+        <button id="backToProducts" class="back-to-products">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="19" y1="12" x2="5" y2="12"></line>
+            <polyline points="12 19 5 12 12 5"></polyline>
+          </svg>
+          Back to Products
+        </button>
 
-    <div class="product-detail-grid">
-      <div class="product-detail-image">
-        <img id="detailProductImage" src="./public/images/product-image-1.png" alt="Product" class="detail-product-img">
-      </div>
-
-      <div class="product-detail-info">
-        <div>
-          <h1 id="detailProductName" class="detail-product-title">Product Name</h1>
-          <p id="detailProductPrice" class="detail-product-price">₹999</p>
-          <div id="detailComingSoonBadge" class="coming-soon-badge">Coming Soon</div>
-          <p id="detailProductDescription" class="detail-product-description">
-            Product description goes here.
-          </p>
-        </div>
-
-        <div class="product-details-section">
-          <h2 class="product-section-title">Product Features</h2>
-          <ul id="detailProductFeatures" class="product-details-list">
-            <!-- Features will be added dynamically -->
-          </ul>
-        </div>
-
-        <div class="how-to-use-section">
-          <div class="dropdown-header" id="howToUseHeader">
-            <h3 class="product-section-title">How to Use</h3>
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="dropdown-icon">
-              <polyline points="6 9 12 15 18 9"></polyline>
-            </svg>
-          </div>
-          <div class="dropdown-content" id="howToUseContent">
-            <div class="product-details-section">
-             
-              <div class="how-to-use-steps">
-                <div class="step">
-                  <div class="step-number">1</div>
-                  <div class="step-content">
-                    <h4>Store Properly</h4>
-                    <p>Keep in a cool, dry place. For best results, refrigerate before use to ensure the suppository is firm.</p>
-                  </div>
+        <div class="product-detail-grid">
+          <div class="product-detail-image">
+            <div class="product-image-slider">
+              <img id="detailProductImage" src="./public/images/product-image-1.png" alt="Product" class="detail-product-img">
+              <div class="slider-controls">
+                <button class="slider-prev" id="sliderPrev">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="15 18 9 12 15 6"></polyline>
+                  </svg>
+                </button>
+                <div class="slider-dots" id="sliderDots">
+                  <!-- Dots will be added dynamically -->
                 </div>
-                <div class="step">
-                  <div class="step-number">2</div>
-                  <div class="step-content">
-                    <h4>Prepare for Insertion</h4>
-                    <p>Wash your hands thoroughly. Remove the suppository from its packaging.</p>
-                  </div>
-                </div>
-                <div class="step">
-                  <div class="step-number">3</div>
-                  <div class="step-content">
-                    <h4>Insert Comfortably</h4>
-                    <p>Lie down and gently insert the suppository as far as is comfortable. The suppository will melt at body temperature.</p>
-                  </div>
-                </div>
-                <div class="step">
-                  <div class="step-number">4</div>
-                  <div class="step-content">
-                    <h4>Experience Relief</h4>
-                    <p>Most women report feeling the cooling sensation within 15-20 minutes, with pain relief following shortly after.</p>
-                  </div>
-                </div>
+                <button class="slider-next" id="sliderNext">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                  </svg>
+                </button>
               </div>
             </div>
           </div>
-        </div>
 
-        <div class="quantity-selector">
-          <span class="quantity-label">Quantity:</span>
-          <div class="quantity-controls">
-            <button id="detailDecreaseQuantity" class="quantity-btn">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <line x1="5" y1="12" x2="19" y2="12"></line>
-              </svg>
-            </button>
-            <span id="detailQuantityValue" class="quantity-value">1</span>
-            <button id="detailIncreaseQuantity" class="quantity-btn">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <line x1="12" y1="5" x2="12" y2="19"></line>
-                <line x1="5" y1="12" x2="19" y2="12"></line>
-              </svg>
-            </button>
-          </div>
-        </div>
+          <div class="product-detail-info">
+            <div>
+              <h1 id="detailProductName" class="detail-product-title">Product Name</h1>
+              <p id="detailProductPrice" class="detail-product-price">₹999</p>
+              <div id="detailComingSoonBadge" class="coming-soon-badge">Coming Soon</div>
+              <p id="detailProductDescription" class="detail-product-description">
+                Product description goes here.
+              </p>
+            </div>
 
-        <div class="product-actions">
-          <button id="detailBuyNowBtn" class="primary-button">Buy Now</button>
-          <button id="detailAddToCartBtn" class="secondary-button">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="cart-icon">
-              <circle cx="9" cy="21" r="1"></circle>
-              <circle cx="20" cy="21" r="1"></circle>
-              <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
-            </svg>
-            Add to Cart
-          </button>
-        </div>
+            <div class="product-details-section">
+              <h2 class="product-section-title">Product Features</h2>
+              <ul id="detailProductFeatures" class="product-details-list">
+                <!-- Features will be added dynamically -->
+              </ul>
+            </div>
 
-        <div id="detailAddedToCartMessage" class="added-to-cart-message">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="20 6 9 17 4 12"></polyline>
-          </svg>
-          Added to Cart!
-        </div>
+            
+<div class="how-to-use-section">
+  <div class="dropdown-header" id="howToUseHeader">
+    <h3 class="product-section-title">How to Use</h3>
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="dropdown-icon">
+      <polyline points="6 9 12 15 18 9"></polyline>
+    </svg>
+  </div>
+
+  <div class="dropdown-content" id="howToUseContent">
+    <div class="steps-container">
+      <div class="step-card animate-on-scroll" data-delay="0">
+       
+        <!-- <div class="step-number">1</div> -->
+        <h3 class="step-title"> <span class="step-emoji">❄️</span>Store Properly</h3>
+        <p class="step-description">
+          Store your PrinkWellness suppositories in a cool, dry place. Refrigerate before use to ensure the suppository is firm for easier insertion.
+        </p>
+      </div>
+
+      <div class="step-card animate-on-scroll" data-delay="200">
+        <span class="step-emoji">🧼</span>
+        <!-- <div class="step-number">2</div> -->
+        <h3 class="step-title">Wash Your Hands</h3>
+        <p class="step-description">
+          Before handling the suppository, wash your hands thoroughly with soap and water.
+        </p>
+      </div>
+
+      <div class="step-card animate-on-scroll" data-delay="400">
+        <span class="step-emoji">📦</span>
+        <!-- <div class="step-number">3</div> -->
+        <h3 class="step-title">Remove Packaging</h3>
+        <p class="step-description">
+          Remove the suppository from its packaging. If it feels too soft, place it back in the refrigerator for a few minutes.
+        </p>
+      </div>
+
+      <div class="step-card animate-on-scroll" data-delay="600">
+        <span class="step-emoji">🛌</span>
+        <!-- <div class="step-number">4</div> -->
+        <h3 class="step-title">Find a Comfortable Position</h3>
+        <p class="step-description">
+          Lie on your back with knees bent or stand with one leg raised on a chair or toilet seat, whichever is more comfortable.
+        </p>
+      </div>
+
+      <div class="step-card animate-on-scroll" data-delay="800">
+        <span class="step-emoji">👆</span>
+        <!-- <div class="step-number">5</div> -->
+        <h3 class="step-title">Insert the Suppository</h3>
+        <p class="step-description">
+          Gently insert the suppository into your vagina as far as is comfortable, similar to inserting a tampon.
+        </p>
+      </div>
+
+      <div class="step-card animate-on-scroll" data-delay="1000">
+        <span class="step-emoji">⏱️</span>
+        <!-- <div class="step-number">6</div> -->
+        <h3 class="step-title">Remain Lying Down</h3>
+        <p class="step-description">
+          If possible, remain lying down for 15–20 minutes to allow the suppository to melt and the active ingredients to be absorbed.
+        </p>
       </div>
     </div>
   </div>
 </div>
+<div class="quantity-selector">
+              <span class="quantity-label">Quantity:</span>
+              <div class="quantity-controls">
+                <button id="detailDecreaseQuantity" class="quantity-btn">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                  </svg>
+                </button>
+                <span id="detailQuantityValue" class="quantity-value">1</span>
+                <button id="detailIncreaseQuantity" class="quantity-btn">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+            <div class="product-actions">
+              <button id="detailBuyNowBtn" class="primary-button">Buy Now</button>
+              <button id="detailAddToCartBtn" class="secondary-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="cart-icon">
+                  <circle cx="9" cy="21" r="1"></circle>
+                  <circle cx="20" cy="21" r="1"></circle>
+                  <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                </svg>
+                Add to Cart
+              </button>
+            </div>
+
+            <div id="detailAddedToCartMessage" class="added-to-cart-message">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              Added to Cart!
+            </div>
+          </div>
+        </div>
+
+        <!-- Product Reviews Section -->
+        <div id="productReviewsContainer" class="product-reviews-section">
+          <h2 class="reviews-title">Customer Reviews</h2>
+          
+          <div class="reviews-grid">
+            <div class="review-card">
+              <h3 class="reviewer-name">Ritu P.</h3>
+              <span class="review-date">December 10, 2022</span>
+              <div class="review-stars">
+                <span class="star-icon">★</span>
+                <span class="star-icon">★</span>
+                <span class="star-icon">★</span>
+                <span class="star-icon">★</span>
+                <span class="star-icon">★</span>
+              </div>
+              <p class="review-content">"I love that this product is made with natural ingredients. The application is straightforward, and the relief is quick. I no longer need to take multiple painkillers throughout the day. This has become an essential part of my monthly routine."</p>
+            </div>
+            
+            <div class="review-card">
+              <h3 class="reviewer-name">Divya T.</h3>
+              <span class="review-date">November 5, 2022</span>
+              <div class="review-stars">
+                <span class="star-icon">★</span>
+                <span class="star-icon">★</span>
+                <span class="star-icon">★</span>
+                <span class="star-icon">★</span>
+                <span class="star-icon">★</span>
+              </div>
+              <p class="review-content">"The 3-pack is perfect for my needs. I use one suppository on the first day of my period when the pain is most intense, and it makes such a difference. I can actually go to work and function normally instead of being in agony. Thank you for creating this amazing product!"</p>
+            </div>
+            
+            <div class="review-card">
+              <h3 class="reviewer-name">Neha R.</h3>
+              <span class="review-date">October 18, 2022</span>
+              <div class="review-stars">
+                <span class="star-icon">★</span>
+                <span class="star-icon">★</span>
+                <span class="star-icon">★</span>
+                <span class="star-icon">★</span>
+                <span class="star-icon">★</span>
+              </div>
+              <p class="review-content">"I was hesitant to try this at first, but I'm so glad I did. The instructions were clear and the application was easier than I expected. The relief was almost immediate - within 15 minutes my cramps had subsided significantly. This is now a permanent part of my period care routine."</p>
+            </div>
+          </div>
+          
+          <div class="review-form-container">
+            <h3 class="review-form-title">Share Your Experience</h3>
+            <p class="review-form-description">We'd love to hear about your experience with PrinkWellness products. Your feedback helps us improve and helps other women make informed decisions.</p>
+            
+            <form id="reviewForm">
+              <div class="form-group">
+                <label for="reviewName" class="form-label">Your Name</label>
+                <input type="text" id="reviewName" class="form-input" required>
+              </div>
+              
+              <div class="form-group">
+                <label for="reviewEmail" class="form-label">Email Address</label>
+                <input type="email" id="reviewEmail" class="form-input" required>
+              </div>
+              
+              <div class="rating-group">
+                <label class="rating-label">Your Rating</label>
+                <div class="star-rating">
+                  <input type="radio" id="star1" name="rating" value="1">
+                  <label for="star1">★</label>
+                  <input type="radio" id="star2" name="rating" value="2">
+                  <label for="star2">★</label>
+                  <input type="radio" id="star3" name="rating" value="3">
+                  <label for="star3">★</label>
+                  <input type="radio" id="star4" name="rating" value="4">
+                  <label for="star4">★</label>
+                  <input type="radio" id="star5" name="rating" value="5" checked>
+                  <label for="star5">★</label>
+                </div>
+              </div>
+              
+              <div class="form-group">
+                <label for="reviewText" class="form-label">Your Review</label>
+                <textarea id="reviewText" class="form-textarea" required></textarea>
+              </div>
+              
+              <button type="submit" class="submit-review-btn">Submit Review</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
   </main>
 
   <footer class="site-footer">
@@ -230,10 +527,8 @@
           <h3 class="footer-heading">Quick Links</h3>
           <ul class="footer-nav">
             <li><a href="./index.html" class="footer-link">Home</a></li>
-            <li><a href="./about.html" class="footer-link">About Us</a></li>
             <li><a href="./shop.html" class="footer-link">Shop</a></li>
             <li><a href="./science.html" class="footer-link">Science</a></li>
-            <!-- <li><a href="./how-to-use.html" class="footer-link">How It Works</a></li> -->
             <li><a href="./contact.html" class="footer-link">Contact</a></li>
           </ul>
         </div>

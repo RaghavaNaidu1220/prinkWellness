@@ -1,400 +1,487 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PrinkWellness - Home</title>
-  <meta name="description" content="PrinkWellness - India's First Clinically Validated Vaginal Suppository for Menstrual Cramps">
-  <link rel="stylesheet" href="./css/styles.css">
-  <link rel="stylesheet" href="./css/home.css">
-  <link rel="stylesheet" href="./css/slider.css">
-  <link rel="stylesheet" href="./css/mobile.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PrinkWellness - Home</title>
+<meta name="description" content="PrinkWellness - India's First Clinically Validated Vaginal Suppository for Menstrual Cramps">
+<link rel="stylesheet" href="./css/styles.css">
+<link rel="stylesheet" href="./css/home.css">
+<link rel="stylesheet" href="./css/slider.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header class="fixed-header">
-    <div class="container">
-      <a href="./index.html" class="logo">
-        <img src="./public/images/prink-logo.png" alt="PrinkWellness" class="logo-img">
-        <span class="logo-text">PrinkWellness</span>
-      </a>
+<header class="fixed-header">
+  <div class="container">
+    <a href="./index.html" class="logo">
+      <img src="./public/images/prink-logo.png" alt="PrinkWellness" class="logo-img">
+      <span class="logo-text">PrinkWellness</span>
+    </a>
 
-      <nav class="desktop-nav">
-        <a href="./index.html" class="nav-link active">Home</a>
-        <a href="./science.html" class="nav-link">Science</a>
-        <a href="./shop.html" class="nav-link">Shop</a>
-        <a href="./reviews.html" class="nav-link">Reviews</a>
-        <a href="./contact.html" class="nav-link">Contact</a>
-        <!-- <a href="./how-to-use.html" class="nav-link">How To Use</a> -->
-        <button class="cart-button" id="cartBtn">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="cart-icon">
-            <circle cx="9" cy="21" r="1"></circle>
-            <circle cx="20" cy="21" r="1"></circle>
-            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
-          </svg>
-          <span class="cart-count" id="cartCount">0</span>
-        </button>
-      </nav>
+    <nav class="desktop-nav">
+      <a href="./index.html" class="nav-link active">Home</a>
+      <a href="./science.html" class="nav-link">Science</a>
+      <a href="./shop.html" class="nav-link">Shop</a>
+      <a href="./contact.html" class="nav-link">Contact</a>
+      <button class="cart-button" id="cartBtn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="cart-icon">
+          <circle cx="9" cy="21" r="1"></circle>
+          <circle cx="20" cy="21" r="1"></circle>
+          <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+        </svg>
+        <span class="cart-count" id="cartCount">0</span>
+      </button>
+    </nav>
 
-      <div class="mobile-nav-container">
-        <button class="cart-button" id="mobileCartBtn">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="cart-icon">
-            <circle cx="9" cy="21" r="1"></circle>
-            <circle cx="20" cy="21" r="1"></circle>
-            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
-          </svg>
-          <span class="cart-count" id="mobileCartCount">0</span>
-        </button>
-        <button class="menu-button" id="menuBtn">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="menu-icon">
-            <line x1="3" y1="12" x2="21" y2="12"></line>
-            <line x1="3" y1="6" x2="21" y2="6"></line>
-            <line x1="3" y1="18" x2="21" y2="18"></line>
-          </svg>
-        </button>
-      </div>
-    </div>
-  </header>
-
-  <div class="mobile-menu" id="mobileMenu">
-    <div class="mobile-menu-header">
-      <button class="close-menu" id="closeMenu">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <line x1="18" y1="6" x2="6" y2="18"></line>
-          <line x1="6" y1="6" x2="18" y2="18"></line>
+    <div class="mobile-nav-container">
+      <button class="cart-button" id="mobileCartBtn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="cart-icon">
+          <circle cx="9" cy="21" r="1"></circle>
+          <circle cx="20" cy="21" r="1"></circle>
+          <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+        </svg>
+        <span class="cart-count" id="mobileCartCount">0</span>
+      </button>
+      <button class="menu-button" id="menuBtn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="menu-icon">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
         </svg>
       </button>
     </div>
-    <nav class="mobile-menu-nav">
-      <a href="./index.html" class="mobile-nav-link active">Home</a>
-      <a href="./science.html" class="mobile-nav-link">Science</a>
-      <a href="./shop.html" class="mobile-nav-link">Shop</a>
-      <a href="./reviews.html" class="mobile-nav-link">Reviews</a>
-      <a href="./contact.html" class="mobile-nav-link">Contact</a>
-      <!-- <a href="./how-to-use.html" class="mobile-nav-link">How To Use</a> -->
-    </nav>
   </div>
+</header>
 
-  <main class="main-content">
-  <!-- Hero Slider Section -->
-  <section class="hero-slider-section">
-    <div class="slider-container">
-      <div class="slider" id="heroSlider">
-        <!-- Slide 1 -->
-        <div class="slide active">
-          <div class="slide-content">
-            <div class="slide-text">
-              <h1 class="slide-title">Embrace Your Period with Confidence</h1>
-              <p class="slide-description">
-                India's First Clinically Validated Vaginal Suppository for Menstrual Cramps. Natural, effective period care designed for your comfort and well-being.
-              </p>
-              <div class="slide-actions">
-                <a href="./shop.html" class="primary-button">Shop Now</a>
-                <a href="./how-to-use.html" class="secondary-button">How It Works</a>
-              </div>
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu-header">
+    <button class="close-menu" id="closeMenu">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+    </button>
+  </div>
+  <nav class="mobile-menu-nav">
+    <a href="./index.html" class="mobile-nav-link active">Home</a>
+    <a href="./science.html" class="mobile-nav-link">Science</a>
+    <a href="./shop.html" class="mobile-nav-link">Shop</a>
+    <a href="./contact.html" class="mobile-nav-link">Contact</a>
+  </nav>
+</div>
+
+<main class="main-content">
+<!-- Hero Slider Section -->
+<section class="hero-slider-section" style="margin-top: 0;">
+  <div class="slider-container">
+    <div class="slider" id="heroSlider">
+      <!-- Slide 1 -->
+      <div class="slide active">
+        <div class="slide-content">
+          <div class="slide-text">
+            <h1 class="slide-title">Embrace Your Period with Confidence</h1>
+            <p class="slide-description">
+              India's First Clinically Validated Vaginal Suppository for Menstrual Cramps. Natural, effective period care designed for your comfort and well-being.
+            </p>
+            <div class="slide-actions">
+              <a href="./shop.html" class="primary-button">Shop Now</a>
+              <a href="./how-to-use.html" class="secondary-button">How It Works</a>
             </div>
-            <div class="slide-image">
-              <a href="./shop.html">
-                <img src="./public/images/prink-girl.png" alt="PrinkWellness Hero Image" class="hero-img">
-              </a>
+          </div>
+          <div class="slide-image">
+            <a href="./shop.html">
+              <img src="./public/images/prink-girl.png" alt="PrinkWellness Hero Image" class="hero-img">
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="slide">
+        <div class="slide-content">
+          <div class="slide-text">
+            <h1 class="slide-title">Natural Relief for Menstrual Pain</h1>
+            <p class="slide-description">
+              Our clinically validated formula provides targeted relief where you need it most, without harmful chemicals or side effects.
+            </p>
+            <div class="slide-actions">
+              <a href="./shop.html" class="primary-button">Discover Products</a>
+              <a href="./about.html" class="secondary-button">Learn More</a>
+            </div>
+          </div>
+          <div class="slide-image">
+            <a href="./shop.html">
+              <img src="./public/images/lifestyle-1.png" alt="Natural Relief" class="hero-img">
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="slide">
+        <div class="slide-content">
+          <div class="slide-text">
+            <h1 class="slide-title">Scientifically Proven Effectiveness</h1>
+            <p class="slide-description">
+              Backed by clinical research and developed by experts in women's health for maximum comfort and relief.
+            </p>
+            <div class="slide-actions">
+              <a href="./product.html" class="primary-button">View Product</a>
+              <a href="./reviews.html" class="secondary-button">Read Reviews</a>
+            </div>
+          </div>
+          <div class="slide-image">
+            <a href="./shop.html">
+              <img src="./public/images/lifestyle-3.png" alt="Scientific Approach" class="hero-img">
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Slider Navigation -->
+    <div class="slider-nav">
+      <button class="slider-prev" id="sliderPrev">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="15 18 9 12 15 6"></polyline>
+        </svg>
+      </button>
+      <div class="slider-dots" id="sliderDots">
+        <button class="slider-dot active" data-index="0"></button>
+        <button class="slider-dot" data-index="1"></button>
+        <button class="slider-dot" data-index="2"></button>
+      </div>
+      <button class="slider-next" id="sliderNext">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- Why PrinkWellness Section -->
+<section class="why-prink-section">
+  <div class="container">
+    <h1 class="section-title text-center">Why PrinkWellness? ✨</h1>
+    <p class="section-description text-center">
+      Unlike oral medication, our vaginal suppository delivers direct, localized relief — no waiting, no bloating, no hassle.
+    </p>
+    
+    <div class="benefits-wave">
+      <div class="benefit-card-premium">
+        <div class="benefit-icon-wrapper">
+          <img src="./public/images/fast-relief.png" alt="Fast Relief" class="benefit-icon">
+          <div class="pulse-animation"></div>
+        </div>
+        <h3>Fast-acting pain relief ⚡</h3>
+        <p class="benefit-description">Feel relief in minutes, not hours</p>
+      </div>
+      
+      <div class="benefit-card-premium">
+        <div class="benefit-icon-wrapper">
+          <img src="./public/images/muscle-relief.png" alt="Muscle Relief" class="benefit-icon">
+          <div class="pulse-animation"></div>
+        </div>
+        <h3>Relieves cramps & muscle spasms 💆‍♀️</h3>
+        <p class="benefit-description">Targets the source of discomfort</p>
+      </div>
+      
+      <div class="benefit-card-premium">
+        <div class="benefit-icon-wrapper">
+          <img src="./public/images/targeted-relief.jpg" alt="Targeted Relief" class="benefit-icon">
+          <div class="pulse-animation"></div>
+        </div>
+        <h3>Reduces inflammation 🌿</h3>
+        <p class="benefit-description">Natural anti-inflammatory properties</p>
+      </div>
+      
+      <div class="benefit-card-premium">
+        <div class="benefit-icon-wrapper">
+          <img src="./public/images/antimicrobial.png" alt="Antimicrobial" class="benefit-icon">
+          <div class="pulse-animation"></div>
+        </div>
+        <h3>Naturally antimicrobial 🛡️</h3>
+        <p class="benefit-description">Supports vaginal health</p>
+      </div>
+      
+      <div class="benefit-card-premium">
+        <div class="benefit-icon-wrapper">
+          <img src="./public/images/natural.png" alt="Natural" class="benefit-icon">
+          <div class="pulse-animation"></div>
+        </div>
+        <h3>100% clean, nature-derived ingredients 🌱</h3>
+        <p class="benefit-description">No harmful chemicals or additives</p>
+      </div>
+    </div>
+<!--     
+    <div class="comparison-section">
+      <h2 class="comparison-title">How We Compare</h2>
+      
+      <div class="comparison-cards">
+        <div class="comparison-feature-card">
+          <div class="feature-icon">⏱️</div>
+          <h3>Speed of Relief</h3>
+          <div class="comparison-details">
+            <div class="prink-side">
+              <span class="prink-label">PrinkWellness</span>
+              <span class="prink-value">Minutes ⚡</span>
+            </div>
+            <div class="vs-divider">vs</div>
+            <div class="other-side">
+              <span class="other-label">Oral Pain Relievers</span>
+              <span class="other-value">30+ minutes</span>
             </div>
           </div>
         </div>
-
-        <!-- Slide 2 -->
-        <div class="slide">
-          <div class="slide-content">
-            <div class="slide-text">
-              <h1 class="slide-title">Natural Relief for Menstrual Pain</h1>
-              <p class="slide-description">
-                Our clinically validated formula provides targeted relief where you need it most, without harmful chemicals or side effects.
-              </p>
-              <div class="slide-actions">
-                <a href="./shop.html" class="primary-button">Discover Products</a>
-                <a href="./about.html" class="secondary-button">Learn More</a>
-              </div>
+        
+        <div class="comparison-feature-card">
+          <div class="feature-icon">🎯</div>
+          <h3>Targeted Relief</h3>
+          <div class="comparison-details">
+            <div class="prink-side">
+              <span class="prink-label">PrinkWellness</span>
+              <span class="prink-value">Direct to source ✓</span>
             </div>
-            <div class="slide-image">
-              <a href="./shop.html">
-                <img src="./public/images/lifestyle-1.png" alt="Natural Relief" class="hero-img">
-              </a>
+            <div class="vs-divider">vs</div>
+            <div class="other-side">
+              <span class="other-label">Oral Pain Relievers</span>
+              <span class="other-value">Systemic ✗</span>
             </div>
           </div>
         </div>
-
-        <!-- Slide 3 -->
-        <div class="slide">
-          <div class="slide-content">
-            <div class="slide-text">
-              <h1 class="slide-title">Scientifically Proven Effectiveness</h1>
-              <p class="slide-description">
-                Backed by clinical research and developed by experts in women's health for maximum comfort and relief.
-              </p>
-              <div class="slide-actions">
-                <a href="./product.html" class="primary-button">View Product</a>
-                <a href="./reviews.html" class="secondary-button">Read Reviews</a>
-              </div>
+        
+        <div class="comparison-feature-card">
+          <div class="feature-icon">⚠️</div>
+          <h3>Side Effects</h3>
+          <div class="comparison-details">
+            <div class="prink-side">
+              <span class="prink-label">PrinkWellness</span>
+              <span class="prink-value">Minimal to none ✓</span>
             </div>
-            <div class="slide-image">
-              <a href="./shop.html">
-                <img src="./public/images/lifestyle-3.png" alt="Scientific Approach" class="hero-img">
-              </a>
+            <div class="vs-divider">vs</div>
+            <div class="other-side">
+              <span class="other-label">Oral Pain Relievers</span>
+              <span class="other-value">Stomach issues, drowsiness ✗</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="comparison-feature-card">
+          <div class="feature-icon">🌿</div>
+          <h3>Natural Ingredients</h3>
+          <div class="comparison-details">
+            <div class="prink-side">
+              <span class="prink-label">PrinkWellness</span>
+              <span class="prink-value">100% ✓</span>
+            </div>
+            <div class="vs-divider">vs</div>
+            <div class="other-side">
+              <span class="other-label">Oral Pain Relievers</span>
+              <span class="other-value">Synthetic ✗</span>
             </div>
           </div>
         </div>
       </div>
+    </div>
+  </div>
+</section> -->
+
+<!-- Patented Formulation Section -->
+<section class="patented-formulation-section">
+  <div class="container">
+    <div class="product-image-container">
+      <img src="public/images/product-box.png" alt="PrinkWellness Plant-Based Vaginal Suppositories" class="product-image">
+    </div>
+    <div class="content-container">
+      <h2 class="section-title">Patented Formulation for Targeted Relief</h2>
+      <p class="section-description">
+        Our clinically validated vaginal suppository is designed to provide direct, localized relief from menstrual cramps. The unique formulation delivers active ingredients exactly where you need them most.
+      </p>
+      <div class="highlight-text">
+        Experience the difference of targeted relief without the systemic side effects of oral medications.
+      </div>
+      <a href="shop.html" class="shop-now-btn">Shop Now</a>
+    </div>
+  </div>
+</section>
+
+  <!-- Ingredients Section -->
+  <section class="ingredients-section">
+    <div class="container">
+      <h2 class="section-title text-center">Powered by Nature, Proven by Science</h2>
+      <p class="section-description text-center">
+        Our hero ingredients are carefully selected to work in harmony with your body — backed by clinical studies and protected by innovation.
+      </p>
       
-      <!-- Slider Navigation -->
-      <div class="slider-nav">
-        <button class="slider-prev" id="sliderPrev">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="15 18 9 12 15 6"></polyline>
-          </svg>
-        </button>
-        <div class="slider-dots" id="sliderDots">
-          <button class="slider-dot active" data-index="0"></button>
-          <button class="slider-dot" data-index="1"></button>
-          <button class="slider-dot" data-index="2"></button>
+      <div class="ingredients-grid">
+        <div class="ingredient-card">
+          <img src="./public/images/vijaya.png" alt="Vijaya" class="ingredient-icon">
+          <h3 class="ingredient-title">Vijaya</h3>
+          <p class="ingredient-description">Powerful antispasmodic & analgesic</p>
         </div>
-        <button class="slider-next" id="sliderNext">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="9 18 15 12 9 6"></polyline>
-          </svg>
-        </button>
+        <div class="ingredient-card">
+          <img src="./public/images/peppermint-oil.png" alt="Peppermint Oil" class="ingredient-icon">
+          <h3 class="ingredient-title">Peppermint Oil</h3>
+          <p class="ingredient-description">Cooling, soothing, and antimicrobial</p>
+        </div>
+        <div class="ingredient-card">
+          <img src="./public/images/cocoa-butter.png" alt="Cocoa Butter" class="ingredient-icon">
+          <h3 class="ingredient-title">Cocoa Butter</h3>
+          <p class="ingredient-description">Moisturizing, nourishing, and comforting</p>
+        </div>
+        <div class="ingredient-card">
+          <img src="./public/images/beeswax.png" alt="Beeswax" class="ingredient-icon">
+          <h3 class="ingredient-title">Beeswax</h3>
+          <p class="ingredient-description">Natural emollient and stabilizer for clean absorption</p>
+        </div>
+      </div>
+      
+      <div class="text-center">
+        <a href="./science.html" class="secondary-button" style="align-items: center;">Explore the Science</a>
       </div>
     </div>
   </section>
 
-  <!-- Why PrinkWellness Section -->
-    <section class="why-prink-section">
-      <div class="container">
-        <h1 class="section-title text-center">Why PrinkWellness?</h1>
-        <p class="section-description text-center">
-          Unlike oral medication, our vaginal suppository delivers direct, localized relief — no waiting, no bloating, no hassle.
-        </p>
-        
-        <div class="benefits-grid">
-          <div class="benefit-card">
-            <h3>Fast-acting pain relief</h3>
-          </div>
-          <div class="benefit-card">
-            <h3>Relieves cramps & muscle spasms</h3>
-          </div>
-          <div class="benefit-card">
-            <h3>Reduces inflammation</h3>
-          </div>
-          <div class="benefit-card wide">
-            <h3>Naturally antimicrobial</h3>
-          </div>
-          <div class="benefit-card wide">
-            <h3>100% clean, nature-derived ingredients</h3>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Patented Formulation Section -->
-<section class="patented-formulation-section">
-  <div class="container">
-    <div class="two-column-layout">
-      <div class="image-column">
-        <a href="./shop.html">
-          <img src="./public/images/product-box.png" alt="PrinkWellness Product Box" class="product-image">
-        </a>
-      </div>
-      <div class="content-column">
-        <h2 class="section-title">Patented Formulation for Targeted Relief</h2>
-        <p class="section-description">
-          Our clinically validated vaginal suppository is designed to provide direct, localized relief from menstrual cramps. The unique formulation delivers active ingredients exactly where you need them most.
-        </p>
-        <p class="section-description">
-          Experience the difference of targeted relief without the systemic side effects of oral medications.
-        </p>
-        <a href="./shop.html" class="primary-button">Shop Now</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-    <!-- Ingredients Section -->
-    <section class="ingredients-section">
-      <div class="container">
-        <h2 class="section-title text-center">Powered by Nature, Proven by Science</h2>
-        <p class="section-description text-center">
-          Our hero ingredients are carefully selected to work in harmony with your body — backed by clinical studies and protected by innovation.
-        </p>
-        
-        <div class="ingredients-grid">
-          <div class="ingredient-card">
-            <div class="ingredient-number">1</div>
-            <h3 class="ingredient-title">Vijaya</h3>
-            <p class="ingredient-description">Powerful antispasmodic & analgesic</p>
-          </div>
-          <div class="ingredient-card">
-            <div class="ingredient-number">2</div>
-            <h3 class="ingredient-title">Peppermint Oil</h3>
-            <p class="ingredient-description">Cooling, soothing, and antimicrobial</p>
-          </div>
-          <div class="ingredient-card">
-            <div class="ingredient-number">3</div>
-            <h3 class="ingredient-title">Cocoa Butter</h3>
-            <p class="ingredient-description">Moisturizing, nourishing, and comforting</p>
-          </div>
-          <div class="ingredient-card">
-            <div class="ingredient-number">4</div>
-            <h3 class="ingredient-title">Beeswax</h3>
-            <p class="ingredient-description">Natural emollient and stabilizer for clean absorption</p>
-          </div>
-        </div>
-        
-        <div class="text-center">
-          <a href="./science.html" class="secondary-button">Explore the Science</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Lifestyle Section -->
+  <!-- Lifestyle Section -->
 <section class="lifestyle-section">
-  <div class="container">
-    <div class="two-column-layout">
-      <div class="content-column">
-        <h2 class="section-title">Designed for Your Lifestyle</h2>
-        <p class="section-description">
-          PrinkWellness integrates seamlessly into your self-care routine. Our vaginal suppositories are discreet, easy to use, and designed with your comfort in mind.
-        </p>
-        <p class="section-description">
-          Take control of your menstrual health with a solution that fits naturally into your monthly routine.
-        </p>
-        <a href="./how-to-use.html" class="primary-button">Learn How It Works</a>
-      </div>
-      <div class="image-column">
-        <a href="./shop.html">
-          <img src="./public/images/lifestyle-1.png" alt="PrinkWellness Lifestyle" class="lifestyle-image">
-        </a>
-      </div>
+<div class="container">
+  <h2 class="section-title">Designed for Your Lifestyle</h2>
+  <div class="two-column-layout">
+    <div class="content-column">
+      <p class="section-description">
+        PrinkWellness integrates seamlessly into your self-care routine. Our vaginal suppositories are discreet, easy to use, and designed with your comfort in mind.
+      </p>
+      <p class="section-description">
+        Take control of your menstrual health with a solution that fits naturally into your monthly routine.
+      </p>
+      <a href="./how-to-use.html" class="primary-button">Learn How It Works</a>
+    </div>
+    <div class="image-column">
+      <a href="./shop.html">
+        <img src="./public/images/lifestyle-1.png" alt="PrinkWellness Lifestyle" class="lifestyle-image">
+      </a>
     </div>
   </div>
+</div>
 </section>
 
-    <!-- Testimonials Section -->
-    <section class="testimonials-section">
-      <div class="container">
-        <h2 class="section-title text-center">What Women Are Saying</h2>
-        
-        <div class="testimonials-grid">
-          <div class="testimonial-card">
-            <div class="stars">
-              <svg class="star-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" /></svg>
-              <svg class="star-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" /></svg>
-              <svg class="star-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" /></svg>
-              <svg class="star-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" /></svg>
-              <svg class="star-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" /></svg>
-            </div>
-            <p class="testimonial-text">"Finally found something that works!"</p>
-          </div>
-          <div class="testimonial-card">
-            <div class="stars">
-              <svg class="star-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" /></svg>
-              <svg class="star-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" /></svg>
-              <svg class="star-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" /></svg>
-              <svg class="star-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" /></svg>
-              <svg class="star-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" /></svg>
-            </div>
-            <p class="testimonial-text">"Natural, effective, and no side effects."</p>
-          </div>
-          <div class="testimonial-card">
-            <div class="stars">
-              <svg class="star-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" /></svg>
-              <svg class="star-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" /></svg>
-              <svg class="star-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" /></svg>
-              <svg class="star-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" /></svg>
-              <svg class="star-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" /></svg>
-            </div>
-            <p class="testimonial-text">"The cooling effect is a lifesaver during my period."</p>
-          </div>
-        </div>
-        
-        <div class="text-center">
-          <a href="./reviews.html" class="secondary-button">Read More Reviews</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="cta-section">
-      <div class="container">
-        <h2 class="section-title text-center">Feel the Shift in Your Cycle</h2>
-        <p class="section-description text-center">
-          You deserve comfort. You deserve control. PrinkWellness is more than relief — it's empowerment, reimagined.
-        </p>
-        <div class="text-center">
-          <a href="./shop.html" class="primary-button">Try It Today</a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
+  <!-- Testimonials Section -->
+  <section class="testimonials-section">
     <div class="container">
-      <div class="footer-grid">
-        <div class="footer-about">
-          <img src="./public/images/prink-logo.png" alt="PrinkWellness" class="footer-logo">
-          <p class="footer-tagline">Relief, Redefined.</p>
-          <p class="footer-description">
-            India's First Clinically Validated Vaginal Suppository for Menstrual Cramps
-          </p>
-        </div>
-        <div class="footer-links">
-          <h3 class="footer-heading">Quick Links</h3>
-          <ul class="footer-nav">
-            <li><a href="./index.html" class="footer-link">Home</a></li>
-            
-            <!-- <li><a href="./about.html" class="footer-link">About Us</a></li> -->
-            <li><a href="./shop.html" class="footer-link">Shop</a></li>
-            <li><a href="./science.html" class="footer-link">Science</a></li>
-            <!-- <li><a href="./how-to-use.html" class="footer-link">How It Works</a></li> -->
-            <li><a href="./contact.html" class="footer-link">Contact</a></li>
-          </ul>
-        </div>
-        <div class="footer-contact">
-          <h3 class="footer-heading">Contact Us</h3>
-          <p class="footer-contact-info">Email: info@prinkwellness.com</p>
-          <p class="footer-contact-info">Follow us on social media</p>
-          <div class="social-icons">
-            <a href="#" class="social-icon">
-              <span class="sr-only">Instagram</span>
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
-                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
-              </svg>
-            </a>
-            <a href="#" class="social-icon">
-              <span class="sr-only">Twitter</span>
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
-              </svg>
-            </a>
-            <a href="#" class="social-icon">
-              <span class="sr-only">Facebook</span>
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
-              </svg>
-            </a>
+      <h2 class="section-title text-center">What Women Are Saying</h2>
+      
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="stars">
+            <svg class="star-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" /></svg>
+            <svg class="star-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" /></svg>
+            <svg class="star-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" /></svg>
+            <svg class="star-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" /></svg>
+            <svg class="star-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" /></svg>
           </div>
+          <p class="testimonial-text">"Finally found something that works!"</p>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars">
+            <svg class="star-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" /></svg>
+            <svg class="star-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" /></svg>
+            <svg class="star-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" /></svg>
+            <svg class="star-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" /></svg>
+            <svg class="star-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" /></svg>
+          </div>
+          <p class="testimonial-text">"Natural, effective, and no side effects."</p>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars">
+            <svg class="star-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" /></svg>
+            <svg class="star-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" /></svg>
+            <svg class="star-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" /></svg>
+            <svg class="star-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" /></svg>
+            <svg class="star-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" /></svg>
+          </div>
+          <p class="testimonial-text">"The cooling effect is a lifesaver during my period."</p>
         </div>
       </div>
-      <div class="footer-bottom">
-        <p class="copyright">
-          &copy; <span id="currentYear"></span> PrinkWellness. All rights reserved.
-        </p>
+      
+      <div class="text-center">
+        <a href="./reviews.html" class="secondary-button">Read More Reviews</a>
       </div>
     </div>
-  </footer>
+  </section>
 
-  <script src="./js/main.js"></script>
-  <script src="./js/slider.js"></script>
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="container">
+      <h2 class="section-title text-center">Feel the Shift in Your Cycle</h2>
+      <p class="section-description text-center">
+        You deserve comfort. You deserve control. PrinkWellness is more than relief — it's empowerment, reimagined.
+      </p>
+      <div class="text-center">
+        <a href="./shop.html" class="primary-button">Try It Today</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-about">
+        <img src="./public/images/prink-logo.png" alt="PrinkWellness" class="footer-logo">
+        <p class="footer-tagline">Relief, Redefined.</p>
+        <p class="footer-description">
+          India's First Clinically Validated Vaginal Suppository for Menstrual Cramps
+        </p>
+      </div>
+      <div class="footer-links">
+        <h3 class="footer-heading">Quick Links</h3>
+        <ul class="footer-nav">
+          <li><a href="./index.html" class="footer-link">Home</a></li>
+          <li><a href="./shop.html" class="footer-link">Shop</a></li>
+          <li><a href="./science.html" class="footer-link">Science</a></li>
+          <li><a href="./contact.html" class="footer-link">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h3 class="footer-heading">Contact Us</h3>
+        <p class="footer-contact-info">Email: info@prinkwellness.com</p>
+        <p class="footer-contact-info">Follow us on social media</p>
+        <div class="social-icons">
+          <a href="#" class="social-icon">
+            <span class="sr-only">Instagram</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+              <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+            </svg>
+          </a>
+          <a href="#" class="social-icon">
+            <span class="sr-only">Twitter</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
+            </svg>
+          </a>
+          <a href="#" class="social-icon">
+            <span class="sr-only">Facebook</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="copyright">
+        &copy; <span id="currentYear"></span> PrinkWellness. All rights reserved.
+      </p>
+    </div>
+  </div>
+</footer>
+
+<script src="./js/main.js"></script>
+<script src="./js/slider.js"></script>
 </body>
 </html>

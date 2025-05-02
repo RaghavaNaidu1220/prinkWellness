@@ -1128,9 +1128,11 @@ img {
 .page-hero {
   padding: 4rem 0;
   background-color: var(--white);
+  margin-top: 5rem; /* Add this line */
   margin-bottom: 3rem;
   text-align: center;
 }
+
 
 .page-title {
   font-size: 2.5rem;

@@ -308,3 +308,32 @@ document.addEventListener("DOMContentLoaded", () => {
   // Call debug function
   debugCart()
 })
+
+// Add this code to properly handle the mobile menu
+document.addEventListener("DOMContentLoaded", () => {
+  const menuBtn = document.getElementById("menuBtn")
+  const closeMenu = document.getElementById("closeMenu")
+  const mobileMenu = document.getElementById("mobileMenu")
+
+  if (menuBtn && closeMenu && mobileMenu) {
+    menuBtn.addEventListener("click", () => {
+      mobileMenu.classList.add("open")
+    })
+
+    closeMenu.addEventListener("click", () => {
+      mobileMenu.classList.remove("open")
+    })
+  }
+
+  // Close menu when clicking outside
+  document.addEventListener("click", (event) => {
+    if (
+      mobileMenu &&
+      mobileMenu.classList.contains("open") &&
+      !mobileMenu.contains(event.target) &&
+      event.target !== menuBtn
+    ) {
+      mobileMenu.classList.remove("open")
+    }
+  })
+})

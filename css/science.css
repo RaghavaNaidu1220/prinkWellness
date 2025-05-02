@@ -137,44 +137,114 @@
   background-color: var(--white);
 }
 
-.science-ingredients-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 2rem;
-  margin: 3rem 0;
+/* Update the ingredients grid section with more colors */
+.ingredients-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-top: 3rem;
 }
 
-.science-ingredient-card {
-  flex: 1;
-  min-width: 220px;
-  text-align: center;
+.ingredient-card {
+  background-color: var(--white);
   padding: 2rem;
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  text-align: center;
+  transition: all 0.3s ease;
+  border-top: 5px solid var(--primary);
   position: relative;
+  overflow: hidden;
 }
 
-.science-ingredient-icon {
-  width: 5rem;
-  height: 5rem;
-  background-color: var(--primary-light);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+/* Add distinct colors for each ingredient card */
+.ingredient-card:nth-child(1) {
+  border-top-color: #a16a88; /* Pink/purple for Vijaya */
+  background-color: rgba(161, 106, 136, 0.05);
+}
+
+.ingredient-card:nth-child(2) {
+  border-top-color: #4caf50; /* Green for Peppermint */
+  background-color: rgba(76, 175, 80, 0.05);
+}
+
+.ingredient-card:nth-child(3) {
+  border-top-color: #8d6e63; /* Brown for Cocoa Butter */
+  background-color: rgba(141, 110, 99, 0.05);
+}
+
+.ingredient-card:nth-child(4) {
+  border-top-color: #ffc107; /* Amber/yellow for Beeswax */
+  background-color: rgba(255, 193, 7, 0.05);
+}
+
+.ingredient-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.ingredient-card:hover::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0) 70%);
+  opacity: 0;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.ingredient-icon {
+  width: 80px;
+  height: 80px;
   margin: 0 auto 1.5rem;
-  color: var(--primary-dark);
+  display: block;
+  transition: transform 0.3s ease;
 }
 
-.science-ingredient-card h3 {
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: var(--primary-dark);
-  margin-bottom: 0.75rem;
+.ingredient-card:hover .ingredient-icon {
+  transform: scale(1.1);
+}
+
+.ingredient-card h3 {
+  color: var(--text-dark);
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
   font-family: var(--font-serif);
+  position: relative;
+  display: inline-block;
 }
 
-.science-ingredient-card p {
-  font-size: 0.9375rem;
+.ingredient-card h3::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background-color: currentColor;
+  transition: width 0.3s ease;
+}
+
+.ingredient-card:hover h3::after {
+  width: 80%;
+}
+
+.ingredient-card p {
   color: var(--text-dark);
   line-height: 1.6;
 }
@@ -194,49 +264,209 @@
   margin: 0 auto 1.5rem;
 }
 
-/* Science Process Steps */
-.science-process-steps {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  margin-top: 3rem;
-  gap: 20px;
+/* Enhanced How It Works Section with Animations */
+.how-it-works {
+  background-color: var(--premium-background);
+  position: relative;
+  overflow: hidden;
 }
 
-.science-process-step {
-  flex: 1;
-  min-width: 220px;
-  text-align: center;
-  padding: 2rem;
-  background-color: var(--white);
-  border-radius: 8px;
-  box-shadow: var(--shadow);
+.how-it-works::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 70% 30%, rgba(161, 106, 136, 0.1) 0%, transparent 70%);
+  z-index: 0;
+}
+
+.how-it-works .section-title {
   position: relative;
 }
 
-.science-step-number {
-  width: 40px;
-  height: 40px;
-  background-color: var(--primary);
-  color: var(--white);
+.how-it-works .section-title::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(to right, #a16a88, #4caf50);
+  border-radius: 3px;
+}
+
+.process-steps {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 50px;
+  position: relative;
+  z-index: 1;
+}
+
+.process-card {
+  flex: 1;
+  min-width: 240px;
+  max-width: 300px;
+  background-color: white;
+  border-radius: 12px;
+  padding: 30px 20px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+  position: relative;
+  overflow: hidden;
+  border-bottom: 4px solid transparent;
+}
+
+.process-card:nth-child(1) {
+  border-bottom-color: #a16a88;
+}
+
+.process-card:nth-child(2) {
+  border-bottom-color: #4caf50;
+}
+
+.process-card:nth-child(3) {
+  border-bottom-color: #8d6e63;
+}
+
+.process-card:nth-child(4) {
+  border-bottom-color: #ffc107;
+}
+
+.process-card:hover {
+  transform: translateY(-15px) scale(1.03);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+}
+
+.step-icon {
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 15px;
+  background-color: rgba(161, 106, 136, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  position: relative;
+  z-index: 1;
+}
+
+.process-card:nth-child(1) .step-icon {
+  background-color: rgba(161, 106, 136, 0.1);
+}
+
+.process-card:nth-child(2) .step-icon {
+  background-color: rgba(76, 175, 80, 0.1);
+}
+
+.process-card:nth-child(3) .step-icon {
+  \
+  background-color: rgba(141, 110, 99, 0.1);
+  175,80,0.1);
+}
+
+.process-card:nth-child(3) .step-icon {
+  background-color: rgba(141, 110, 99, 0.1);
+}
+
+.process-card:nth-child(4) .step-icon {
+  background-color: rgba(255, 193, 7, 0.1);
+}
+
+.emoji {
+  font-size: 32px;
+  line-height: 1;
+  display: block;
+}
+
+.step-number {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  width: 36px;
+  height: 36px;
+  background-color: var(--premium-accent);
+  color: white;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: 700;
-  font-size: 1.2rem;
+  font-size: 18px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  z-index: 2;
 }
 
-.science-process-step h3 {
-  color: var(--text-dark);
-  margin-bottom: 1rem;
+.process-card h3 {
+  margin: 15px 0 10px;
+  color: var(--premium-text);
   font-size: 1.3rem;
-  font-family: var(--font-serif);
+  font-weight: 600;
+  position: relative;
+  display: inline-block;
 }
 
-.science-process-step p {
-  color: var(--text-dark);
+.process-card h3::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: currentColor;
+  transition: width 0.4s ease;
+}
+
+.process-card:hover h3::after {
+  width: 100%;
+}
+
+.process-card p {
+  color: var(--premium-text-light);
   line-height: 1.6;
+  margin-top: 10px;
+  font-size: 0.95rem;
+}
+
+.process-card::before {
+  content: "";
+  position: absolute;
+  top: -100%;
+  left: -100%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0) 70%);
+  opacity: 0;
+  transform: scale(0.5);
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.process-card:hover::before {
+  opacity: 0.3;
+  transform: scale(1);
+  animation: shine 2s infinite;
+}
+
+@keyframes shine {
+  0% {
+    opacity: 0;
+    transform: scale(0.5) rotate(0deg);
+  }
+  50% {
+    opacity: 0.3;
+    transform: scale(1) rotate(180deg);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.5) rotate(360deg);
+  }
 }
 
 /* Science FAQ Section */
@@ -427,7 +657,7 @@
 /* Keep original styles for elements that might be shared */
 .hero-section {
   background-color: var(--background);
-  padding: 120px 0 60px;
+  padding: 90px 0 0px;
   text-align: center;
 }
 
@@ -537,45 +767,73 @@
   text-align: center;
 }
 
-.ingredients-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
-  margin-top: 3rem;
+/* Colorful ingredient cards */
+.ingredients-section .ingredient-card:nth-child(1) {
+  border-top: 4px solid #9d6a87;
+  background-color: rgba(157, 106, 135, 0.05);
 }
 
-.ingredient-card {
-  background-color: var(--white);
-  padding: 2rem;
-  border-radius: 8px;
-  box-shadow: var(--shadow);
-  text-align: center;
-  transition: all 0.3s ease;
+.ingredients-section .ingredient-card:nth-child(2) {
+  border-top: 4px solid #4caf50;
+  background-color: rgba(76, 175, 80, 0.05);
 }
 
-.ingredient-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+.ingredients-section .ingredient-card:nth-child(3) {
+  border-top: 4px solid #8d6e63;
+  background-color: rgba(141, 110, 99, 0.05);
+}
+
+.ingredients-section .ingredient-card:nth-child(4) {
+  border-top: 4px solid #ffc107;
+  background-color: rgba(255, 193, 7, 0.05);
+}
+
+.ingredients-section .ingredient-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.ingredients-section .ingredient-card h3 {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+.ingredients-section .ingredient-card h3::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--primary);
+  transition: width 0.3s ease;
+}
+
+.ingredients-section .ingredient-card:hover h3::after {
+  width: 100%;
+}
+
+.ingredients-section .ingredient-card:nth-child(1) h3::after {
+  background-color: #9d6a87;
+}
+
+.ingredients-section .ingredient-card:nth-child(2) h3::after {
+  background-color: #4caf50;
+}
+
+.ingredients-section .ingredient-card:nth-child(3) h3::after {
+  background-color: #8d6e63;
+}
+
+.ingredients-section .ingredient-card:nth-child(4) h3::after {
+  background-color: #ffc107;
 }
 
 .ingredient-icon {
-  width: 80px;
-  height: 80px;
-  margin: 0 auto 1.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--primary);
+  transition: transform 0.3s ease;
 }
 
-.ingredient-card h3 {
-  color: var(--text-dark);
-  margin-bottom: 1rem;
-  font-size: 1.3rem;
-  font-family: var(--font-serif);
-}
-
-.ingredient-card p {
-  color: var(--text-dark);
-  line-height: 1.6;
+.ingredients-section .ingredient-card:hover .ingredient-icon {
+  transform: scale(1.1);
 }

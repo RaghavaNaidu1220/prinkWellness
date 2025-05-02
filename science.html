@@ -7,7 +7,7 @@
   <meta name="description" content="The science behind PrinkWellness - India's First Clinically Validated Vaginal Suppository for Menstrual Cramps">
   <link rel="stylesheet" href="./css/styles.css">
   <link rel="stylesheet" href="./css/science.css">
-  <link rel="stylesheet" href="./css/mobile.css">
+  <link rel="stylesheet" href="./css/updates.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -24,9 +24,7 @@
         <a href="./index.html" class="nav-link">Home</a>
         <a href="./science.html" class="nav-link active">Science</a>
         <a href="./shop.html" class="nav-link">Shop</a>
-        <a href="./reviews.html" class="nav-link">Reviews</a>
         <a href="./contact.html" class="nav-link">Contact</a>
-        <!-- <a href="./how-to-use.html" class="nav-link">How To Use</a> -->
         <button class="cart-button" id="cartBtn">
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="cart-icon">
             <circle cx="9" cy="21" r="1"></circle>
@@ -70,16 +68,13 @@
       <a href="./index.html" class="mobile-nav-link">Home</a>
       <a href="./science.html" class="mobile-nav-link active">Science</a>
       <a href="./shop.html" class="mobile-nav-link">Shop</a>
-      <a href="./reviews.html" class="mobile-nav-link">Reviews</a>
       <a href="./contact.html" class="mobile-nav-link">Contact</a>
-      <!-- <a href="./how-to-use.html" class="mobile-nav-link">How To Use</a>
-        -->
     </nav>
   </div>
 
   <main class="main-content">
     <!-- Hero Section -->
-    <section class="hero-section">
+    <section class="hero-section" >
       <div class="container">
         <h1 class="page-title">The Science Behind PrinkWellness</h1>
         <p class="subtitle">Research-backed innovation for effective menstrual wellness solutions.</p>
@@ -124,22 +119,22 @@
     
     <div class="ingredients-grid">
       <div class="ingredient-card animate-on-scroll" data-delay="0">
-        <div class="ingredient-number">1</div>
+        <img src="./public/images/vijaya.png" alt="Vijaya" class="ingredient-icon">
         <h3>Vijaya</h3>
         <p>Powerful antispasmodic & analgesic that helps reduce uterine contractions and pain during menstruation.</p>
       </div>
       <div class="ingredient-card animate-on-scroll" data-delay="200">
-        <div class="ingredient-number">2</div>
+        <img src="./public/images/peppermint-oil.png" alt="Peppermint Oil" class="ingredient-icon">
         <h3>Peppermint Oil</h3>
         <p>Cooling, soothing, and antimicrobial properties that provide immediate comfort and prevent infections.</p>
       </div>
       <div class="ingredient-card animate-on-scroll" data-delay="400">
-        <div class="ingredient-number">3</div>
+        <img src="./public/images/cocoa-butter.png" alt="Cocoa Butter" class="ingredient-icon">
         <h3>Cocoa Butter</h3>
         <p>Moisturizing, nourishing, and comforting base that melts at body temperature for optimal delivery.</p>
       </div>
       <div class="ingredient-card animate-on-scroll" data-delay="600">
-        <div class="ingredient-number">4</div>
+        <img src="./public/images/beeswax.png" alt="Beeswax" class="ingredient-icon">
         <h3>Beeswax</h3>
         <p>Natural emollient and stabilizer for clean absorption that helps maintain the suppository's shape until use.</p>
       </div>
@@ -150,26 +145,38 @@
     <!-- How It Works Section -->
     <section class="how-it-works section-padding">
       <div class="container">
-        <h2 class="section-title text-center animate-on-scroll">How Our Suppository Works</h2>
+        <h2 class="section-title text-center animate-on-scroll">How Our Suppository Works ✨</h2>
         <p class="section-subtitle text-center animate-on-scroll" data-delay="100">A targeted approach to menstrual pain relief.</p>
         
         <div class="process-steps">
-          <div class="process-step animate-on-scroll" data-delay="0">
+          <div class="process-step animate-on-scroll process-card" data-delay="0">
+            <div class="step-icon">
+              <span class="emoji">🎯</span>
+            </div>
             <div class="step-number">1</div>
             <h3>Local Delivery</h3>
             <p>Our suppository delivers active ingredients directly to the source of pain, bypassing the digestive system for faster relief.</p>
           </div>
-          <div class="process-step animate-on-scroll" data-delay="200">
+          <div class="process-step animate-on-scroll process-card" data-delay="200">
+            <div class="step-icon">
+              <span class="emoji">🌿</span>
+            </div>
             <div class="step-number">2</div>
             <h3>Anti-inflammatory Action</h3>
             <p>Plant-based compounds reduce inflammation in the uterine tissue, decreasing pain signals and cramping.</p>
           </div>
-          <div class="process-step animate-on-scroll" data-delay="400">
+          <div class="process-step animate-on-scroll process-card" data-delay="400">
+            <div class="step-icon">
+              <span class="emoji">💆‍♀️</span>
+            </div>
             <div class="step-number">3</div>
             <h3>Muscle Relaxation</h3>
             <p>Natural muscle relaxants help ease uterine contractions that cause painful cramping during menstruation.</p>
           </div>
-          <div class="process-step animate-on-scroll" data-delay="600">
+          <div class="process-step animate-on-scroll process-card" data-delay="600">
+            <div class="step-icon">
+              <span class="emoji">⚖️</span>
+            </div>
             <div class="step-number">4</div>
             <h3>Hormone Balance</h3>
             <p>Select ingredients help modulate hormone fluctuations that contribute to menstrual discomfort.</p>
@@ -177,24 +184,6 @@
         </div>
       </div>
     </section>
-
-    <!-- Research Team Section
-    <section class="research-team section-padding bg-light">
-      <div class="container">
-        <div class="two-column-layout">
-          <div class="image-column animate-on-scroll">
-            <img src="./public/images/prink-girl.png" alt="Our Research Team" class="rounded-image">
-          </div>
-          <div class="content-column animate-on-scroll" data-delay="200">
-            <h2 class="section-title">Our Research Team</h2>
-            <p>Behind PrinkWellness is a dedicated team of scientists, gynecologists, and herbalists committed to developing innovative solutions for menstrual wellness.</p>
-            <p>Led by Dr. Priya Sharma, our research team combines expertise in gynecology, pharmacology, and traditional medicine to create products that are both scientifically sound and rooted in traditional wisdom.</p>
-            <p>We collaborate with leading research institutions to continuously improve our formulations and develop new solutions for women's health concerns.</p>
-            <a href="#" class="primary-button">Meet Our Experts</a>
-          </div>
-        </div>
-      </div>
-    </section> -->
 
     <!-- FAQ Section -->
     <section class="faq-section section-padding">
@@ -273,10 +262,8 @@
           <h3 class="footer-heading">Quick Links</h3>
           <ul class="footer-nav">
             <li><a href="./index.html" class="footer-link">Home</a></li>
-            <!-- <li><a href="./about.html" class="footer-link">About Us</a></li> -->
             <li><a href="./shop.html" class="footer-link">Shop</a></li>
             <li><a href="./science.html" class="footer-link">Science</a></li>
-            <!-- <li><a href="./how-to-use.html" class="footer-link">How It Works</a></li> -->
             <li><a href="./contact.html" class="footer-link">Contact</a></li>
           </ul>
         </div>
